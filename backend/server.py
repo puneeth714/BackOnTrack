@@ -164,65 +164,69 @@ def get_recovery_plan():
     lms = get_student_lms_context(CURRENT_STATE["student_id"])
     knowledge = get_academic_knowledge("Mid Term 2", "Operating Systems")
     
-    # Calculate readiness based on completed topics
-    completed_count = len(CURRENT_STATE["completed_topic_ids"])
+    completed_ids = CURRENT_STATE["completed_topic_ids"]
+    completed_count = len(completed_ids)
     base_readiness = 46 + (completed_count * 10)
-    readiness = min(92, base_readiness)
+    readiness = min(95, base_readiness)
 
-    next_block = "cpu-scheduling"
+    next_block = "all-mastered"
     for tid in ["cpu-scheduling", "synchronization", "deadlocks", "memory-management", "virtual-memory"]:
-        if tid not in CURRENT_STATE["completed_topic_ids"]:
+        if tid not in completed_ids:
             next_block = tid
             break
+
+    blocks = [
+        {
+            "id": "cpu-scheduling",
+            "topicId": "cpu-scheduling",
+            "title": "CPU Scheduling (SRTF, Round Robin)",
+            "minutes": 0 if "cpu-scheduling" in completed_ids else 45,
+            "status": "complete" if "cpu-scheduling" in completed_ids else ("current" if next_block == "cpu-scheduling" else "queued"),
+            "rationale": "Guaranteed 10-12 marker. Master Gantt chart preemption first."
+        },
+        {
+            "id": "synchronization",
+            "topicId": "synchronization",
+            "title": "Process Synchronization (Producer-Consumer)",
+            "minutes": 0 if "synchronization" in completed_ids else 50,
+            "status": "complete" if "synchronization" in completed_ids else ("current" if next_block == "synchronization" else "queued"),
+            "rationale": "Direct diagnostic gap from IA-1 (0/15). Counting semaphore bounded buffer."
+        },
+        {
+            "id": "deadlocks",
+            "topicId": "deadlocks",
+            "title": "Deadlocks (Banker's Algorithm)",
+            "minutes": 0 if "deadlocks" in completed_ids else 60,
+            "status": "complete" if "deadlocks" in completed_ids else ("current" if next_block == "deadlocks" else "queued"),
+            "rationale": "High-yield numerical. Matrix subtraction Need = Max - Allocation."
+        },
+        {
+            "id": "memory-management",
+            "topicId": "memory-management",
+            "title": "Main Memory (Paging Hardware & TLB)",
+            "minutes": 0 if "memory-management" in completed_ids else 40,
+            "status": "complete" if "memory-management" in completed_ids else ("current" if next_block == "memory-management" else "queued"),
+            "rationale": "Hardware address translation and EMAT formula numericals."
+        },
+        {
+            "id": "virtual-memory",
+            "topicId": "virtual-memory",
+            "title": "Virtual Memory & Page Replacement (FIFO, LRU)",
+            "minutes": 0 if "virtual-memory" in completed_ids else 35,
+            "status": "complete" if "virtual-memory" in completed_ids else ("current" if next_block == "virtual-memory" else "queued"),
+            "rationale": "Demand paging, Belady's anomaly, and page fault reference simulation."
+        }
+    ]
+
+    remaining_mins = sum(b["minutes"] for b in blocks)
 
     return {
         "id": "rohan-os-plan",
         "readiness": readiness,
         "targetReadiness": 85,
-        "totalMinutes": int(CURRENT_STATE["hours_budget"] * 60),
+        "totalMinutes": remaining_mins,
         "nextBlockId": next_block,
-        "blocks": [
-            {
-                "id": "cpu-scheduling",
-                "topicId": "cpu-scheduling",
-                "title": "CPU Scheduling (SRTF, Round Robin)",
-                "minutes": 45,
-                "status": "complete" if "cpu-scheduling" in CURRENT_STATE["completed_topic_ids"] else ("current" if next_block == "cpu-scheduling" else "queued"),
-                "rationale": "Guaranteed 10-12 marker. Master Gantt chart preemption first."
-            },
-            {
-                "id": "synchronization",
-                "topicId": "synchronization",
-                "title": "Process Synchronization (Producer-Consumer)",
-                "minutes": 50,
-                "status": "complete" if "synchronization" in CURRENT_STATE["completed_topic_ids"] else ("current" if next_block == "synchronization" else "queued"),
-                "rationale": "Direct diagnostic gap from IA-1 (0/15). Counting semaphore bounded buffer."
-            },
-            {
-                "id": "deadlocks",
-                "topicId": "deadlocks",
-                "title": "Deadlocks (Banker's Algorithm)",
-                "minutes": 60,
-                "status": "complete" if "deadlocks" in CURRENT_STATE["completed_topic_ids"] else ("current" if next_block == "deadlocks" else "queued"),
-                "rationale": "High-yield numerical. Matrix subtraction Need = Max - Allocation."
-            },
-            {
-                "id": "memory-management",
-                "topicId": "memory-management",
-                "title": "Main Memory (Paging Hardware & TLB)",
-                "minutes": 40,
-                "status": "complete" if "memory-management" in CURRENT_STATE["completed_topic_ids"] else ("current" if next_block == "memory-management" else "queued"),
-                "rationale": "Hardware address translation and EMAT formula numericals."
-            },
-            {
-                "id": "virtual-memory",
-                "topicId": "virtual-memory",
-                "title": "Virtual Memory & Page Replacement (FIFO, LRU)",
-                "minutes": 35,
-                "status": "complete" if "virtual-memory" in CURRENT_STATE["completed_topic_ids"] else ("current" if next_block == "virtual-memory" else "queued"),
-                "rationale": "Demand paging, Belady's anomaly, and page fault reference simulation."
-            }
-        ],
+        "blocks": blocks,
         "deprioritizedTopicIds": ["dining-philosophers", "multilevel-feedback", "segmentation", "disk-scheduling"]
     }
 
@@ -273,34 +277,43 @@ def get_topic_evidence(topic_id: str):
 def submit_mastery_check(topic_id: str):
     # Mark topic completed
     CURRENT_STATE["completed_topic_ids"].add(topic_id)
-    
-    # Recalibrate via learning_gain_tool
-    recal = recalibrate_study_pace(
-        topic_completed=topic_id,
-        estimated_mins=60.0,
-        actual_spent_mins=42.0,  # Finished 18m faster!
-        remaining_budget_mins=CURRENT_STATE["hours_budget"] * 60,
-        current_planned_topics=[{"name": "deadlocks", "marks": 10, "prep_hours": 1.0}]
-    )
 
     plan = get_recovery_plan()
     
+    topic_titles = {
+        "cpu-scheduling": "CPU Scheduling (SRTF, Round Robin)",
+        "synchronization": "Process Synchronization",
+        "deadlocks": "Deadlocks (Banker's Algorithm)",
+        "memory-management": "Main Memory (Paging & TLB)",
+        "virtual-memory": "Virtual Memory & Page Replacement"
+    }
+    title = topic_titles.get(topic_id, topic_id)
+    mins_left = plan["totalMinutes"]
+    new_mastery = min(95, 46 + len(CURRENT_STATE["completed_topic_ids"]) * 10)
+
     return {
         "topicId": topic_id,
         "before": 38,
-        "after": 72,
+        "after": new_mastery,
         "plan": plan,
         "change": {
-            "id": "chg-1",
+            "id": f"chg-{topic_id}",
             "reason": "mastery",
-            "title": f"Mastery verified on {topic_id}!",
-            "summary": "18 minutes released from CPU Scheduling. Re-routed to Deadlocks to bank compulsory 10-marker.",
+            "title": f"Mastery verified on {title}!",
+            "summary": f"Completed topic block! Active study remaining reduced to {mins_left} min. Exam readiness increased to {plan['readiness']}%.",
             "releasedMinutes": 18,
-            "before": "45 min on CPU Scheduling",
-            "after": "27 min active, 18 min re-routed to Deadlocks",
-            "destination": "Deadlocks"
+            "before": f"Planned block on {title}",
+            "after": f"Mastered (0 min). Next up: {plan['nextBlockId']}",
+            "destination": plan["nextBlockId"]
         }
     }
+
+
+@app.post("/api/topics/reset")
+def reset_progress():
+    CURRENT_STATE["completed_topic_ids"].clear()
+    CURRENT_STATE["hours_budget"] = 6.0
+    return {"status": "reset", "plan": get_recovery_plan()}
 
 
 # =========================================================================
