@@ -1,0 +1,71 @@
+
+
+Skip to content
+Using Gmail with screen readers
+1 of 1,841
+ACTION REQUIRED: Your Live Build Problem Statement & Room Allocation | BPF 2026
+Inbox
+
+
+Hack2skill <jitesh.koul@hack2skill.com>
+10:37 (1 hour ago)
+to me
+
+Builders Pitch Fest banner
+
+Dear puneeth kamatham,
+
+The live build challenge for Builders’ Pitch Fest 2026 will start soon at 11:00 AM!
+
+Below are your assigned domain problem statement, build room location, and designated mentor(s). Please read carefully and head to your assigned workstation immediately to begin building.
+
+YOUR LIVE BUILD ALLOCATION
+Startup Name: puneeth kamatham
+
+Assigned Build Room: Academic Block Room T03 (Academic Block 1, 3rd Floor)
+
+YOUR PROBLEM STATEMENT
+Problem Statement Title: EdTech AI Problems,
+
+Problem Statement Details / Brief: Build an AI-enabled solution that helps students make better academic decisions or improve learning outcomes or manage their time
+
+Check out the whole document here: https://docs.google.com/document/d/1C5qN4M5R9_FqeYk1BNhAEE8ZpFqBKRzK/edit
+
+(You can also access your problem statement and resource files directly on your Hack2skill Dashboard).
+
+Challenges
+
+Submission Dashboard
+
+IMMEDIATE NEXT STEPS & BUILD TIMELINE
+Move to Room T03: Head to Academic Block 1 (3rd Floor) and locate Room T03.
+
+Connect with Your Mentor: Meet your mentor in your room for Checkpoint 1 (architecture and solution alignment).
+
+Key Timelines Today:
+
+10:45 AM: Live Build Commences
+
+01:00 PM – 01:45 PM: Working Lunch Break
+
+02:00 PM – 05:30 PM: Build Continues & Checkpoint 2 (Prototype Testing)
+
+06:00 PM SHARP: Code Freeze & Final Submission Cutoff on the Hack2skill portal
+
+ON-GROUND HELP DESK
+If you have any difficulty locating your room or accessing your problem statement, reach out to the on-ground team immediately:
+
+All the best, and happy building!
+
+Warm regards,
+Team BITSoM Vertex
+
+
+
+
+puneeth kamatham <kpuneeth714@gmail.com>
+10:43 (55 minutes ago)
+to Hruthik
+
+++
+

@@ -1,0 +1,135 @@
+{
+  "course": {
+    "code": "CS304",
+    "title": "Operating Systems",
+    "total_course_modules": 5
+  },
+  "exam_context": {
+    "target_exam": "Mid Term Exam 2 (Internal Assessment)",
+    "date": "2026-10-16 (Friday)",
+    "duration_minutes": 90,
+    "max_marks": 50,
+    "pass_marks": 20,
+    "good_marks_threshold": 35
+  },
+  "syllabus_scoping_rules": {
+    "scoping_logic": "AI must filter out Module 1 (already covered in Mid Term 1) and Module 5 (post-midterm topics). Only evaluate topics taught between Week 5 and Week 11.",
+    "active_modules_for_midterm": [
+      {
+        "module_code": "M2_PART_B",
+        "module_name": "CPU Scheduling Algorithms",
+        "scope_status": "IN_SCOPE_FOR_MIDTERM",
+        "allocated_marks_in_paper": 12,
+        "topics": [
+          {
+            "topic_id": "M2_T1",
+            "name": "Preemptive Scheduling (SRTF, Round Robin)",
+            "impact_category": "CRITICAL_MUST_COVER",
+            "marks": 12,
+            "prep_hours": 2.0,
+            "pattern": "Guaranteed 10-12 mark numerical (Gantt chart, TAT, WT).",
+            "unlock_prerequisite": "Process States & PCB"
+          },
+          {
+            "topic_id": "M2_T2",
+            "name": "Multilevel Feedback Queue Theory",
+            "impact_category": "SAFELY_DEPRIORITIZE",
+            "marks": 0,
+            "prep_hours": 1.5,
+            "pattern": "Rarely appears in Mid Term 2; optional reading."
+          }
+        ]
+      },
+      {
+        "module_code": "M3",
+        "module_name": "Process Synchronization & Deadlocks",
+        "scope_status": "IN_SCOPE_FOR_MIDTERM",
+        "allocated_marks_in_paper": 26,
+        "topics": [
+          {
+            "topic_id": "M3_T1",
+            "name": "Semaphores wait() and signal() Mechanics",
+            "impact_category": "FUNDAMENTAL_UNLOCK",
+            "marks": 6,
+            "prep_hours": 1.0,
+            "pattern": "Atomic definition & mutual exclusion. Essential to understand Producer-Consumer.",
+            "unlocks": ["Producer-Consumer", "Banker's Algorithm"]
+          },
+          {
+            "topic_id": "M3_T2",
+            "name": "Producer-Consumer Bounded Buffer Problem",
+            "impact_category": "CRITICAL_MUST_COVER",
+            "marks": 10,
+            "prep_hours": 2.0,
+            "pattern": "Guaranteed 8-10 mark pseudocode implementation with mutex, empty, full semaphores."
+          },
+          {
+            "topic_id": "M3_T3",
+            "name": "Banker's Algorithm for Deadlock Avoidance",
+            "impact_category": "CRITICAL_MUST_COVER",
+            "marks": 10,
+            "prep_hours": 2.0,
+            "pattern": "Guaranteed 10-mark numerical: Need Matrix + Safe Sequence check."
+          },
+          {
+            "topic_id": "M3_T4",
+            "name": "Dining Philosophers & Monitors Theory",
+            "impact_category": "SAFELY_DEPRIORITIZE",
+            "marks": 0,
+            "prep_hours": 2.5,
+            "pattern": "Always optional internal choice with Producer-Consumer."
+          }
+        ]
+      },
+      {
+        "module_code": "M4_PART_A",
+        "module_name": "Main Memory & Paging Hardware",
+        "scope_status": "IN_SCOPE_FOR_MIDTERM",
+        "allocated_marks_in_paper": 12,
+        "topics": [
+          {
+            "topic_id": "M4_T1",
+            "name": "Paging Hardware, TLB & Address Translation",
+            "impact_category": "CRITICAL_MUST_COVER",
+            "marks": 8,
+            "prep_hours": 1.5,
+            "pattern": "Address translation diagram + Effective Memory Access Time (EMAT) formula."
+          },
+          {
+            "topic_id": "M4_T2",
+            "name": "Segmentation Hardware & Protection",
+            "impact_category": "SAFELY_DEPRIORITIZE",
+            "marks": 4,
+            "prep_hours": 2.0,
+            "pattern": "Short question; difficult return per hour compared to Paging."
+          }
+        ]
+      }
+    ],
+    "excluded_modules": [
+      {
+        "module_code": "M1",
+        "module_name": "Introduction, OS Services & System Calls",
+        "reason": "Evaluated in Mid Term 1 (Week 4). Not in Mid Term 2 syllabus."
+      },
+      {
+        "module_code": "M4_PART_B",
+        "module_name": "Virtual Memory & Page Replacement",
+        "reason": "To be taught in Weeks 12-13. Postponed to End-Sem exam."
+      },
+      {
+        "module_code": "M5",
+        "module_name": "Mass Storage & File Systems",
+        "reason": "End-Sem only. Not taught yet."
+      }
+    ]
+  },
+  "midterm_yield_summary": {
+    "total_midterm_paper_marks": 50,
+    "marks_from_top_critical_topics": 40,
+    "critical_topics_count": 4,
+    "prep_time_needed_for_critical_topics": "6.5 hours",
+    "fundamental_unlock_prep_time": "1.0 hour",
+    "total_catchup_time_required": "7.5 hours over 2 days"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "exam_name": "Mid Term Exam 2 (Internal Assessment) - Operating Systems",
+  "historical_analysis_period": "2022 - 2025 (8 Question Papers: Spring & Fall)",
+  "standard_paper_format": {
+    "total_questions": 5,
+    "marks_per_question": 10,
+    "total_marks": 50,
+    "choice_pattern": "Every question has an internal OR choice (e.g. Q1.A or Q1.B)."
+  },
+  "question_pattern_intelligence": [
+    {
+      "question_number": "Q1",
+      "marks": 10,
+      "slot_focus": "Module 2 (CPU Scheduling)",
+      "option_A": {
+        "topic": "Preemptive CPU Scheduling (SRTF or Round Robin) Numerical",
+        "historical_appearance_rate": "100% (8 out of 8 papers)",
+        "predictability": "EXTREMELY_HIGH",
+        "recommendation": "ALWAYS_ATTEMPT (Numerical yields 10/10 if Gantt chart is correct)"
+      },
+      "option_B": {
+        "topic": "Multilevel Queue Scheduling & Thread Scheduling Theory",
+        "historical_appearance_rate": "100%",
+        "predictability": "THEORY_ESSAY",
+        "recommendation": "SAFELY_SKIP (Subjective grading caps marks at 6-7/10)"
+      }
+    },
+    {
+      "question_number": "Q2",
+      "marks": 10,
+      "slot_focus": "Module 3 (Process Synchronization)",
+      "option_A": {
+        "topic": "Producer-Consumer Problem using Counting Semaphores (Standard Code)",
+        "historical_appearance_rate": "87.5% (7 out of 8 papers)",
+        "predictability": "HIGH",
+        "recommendation": "ALWAYS_ATTEMPT (Standard 15-line code memorization)"
+      },
+      "option_B": {
+        "topic": "Dining Philosophers Problem using Monitors / Peterson's Algorithm Proof",
+        "historical_appearance_rate": "87.5%",
+        "predictability": "COMPLEX_THEORY",
+        "recommendation": "SAFELY_SKIP (High chance of syntax or condition error)"
+      }
+    },
+    {
+      "question_number": "Q3",
+      "marks": 10,
+      "slot_focus": "Module 3 (Deadlocks)",
+      "option_A": {
+        "topic": "Banker's Algorithm Safety & Request Sequence Numerical",
+        "historical_appearance_rate": "100% (8 out of 8 papers)",
+        "predictability": "EXTREMELY_HIGH",
+        "recommendation": "ALWAYS_ATTEMPT (Pure matrix subtraction: Need = Max - Allocation)"
+      },
+      "option_B": {
+        "topic": "Deadlock Detection Algorithm for Multiple Instances & Recovery Schemes",
+        "historical_appearance_rate": "100%",
+        "predictability": "LENGTHY_ESSAY",
+        "recommendation": "SAFELY_SKIP (Too much writing for same 10 marks)"
+      }
+    },
+    {
+      "question_number": "Q4",
+      "marks": 10,
+      "slot_focus": "Module 4 (Main Memory & Paging)",
+      "option_A": {
+        "topic": "Paging Hardware Architecture + TLB Numerical (Effective Access Time)",
+        "historical_appearance_rate": "87.5% (7 out of 8 papers)",
+        "predictability": "HIGH",
+        "recommendation": "ALWAYS_ATTEMPT (Standard diagram + 1 formula: EMAT = h*(t+m) + (1-h)*(t+2m))"
+      },
+      "option_B": {
+        "topic": "Segmentation with Paging / Internal vs External Fragmentation Theory",
+        "historical_appearance_rate": "87.5%",
+        "predictability": "THEORY_COMPARISON",
+        "recommendation": "SAFELY_SKIP (Lower return per hour)"
+      }
+    },
+    {
+      "question_number": "Q5",
+      "marks": 10,
+      "slot_focus": "Foundational Conceptual Short Notes",
+      "structure": "Answer any 2 out of 4 (5 marks each)",
+      "high_frequency_short_topics": [
+        { "topic": "Process Control Block (PCB) Fields", "frequency": "6/8 papers", "recommended": true },
+        { "topic": "Four Necessary Conditions for Deadlock", "frequency": "7/8 papers", "recommended": true },
+        { "topic": "Critical Section 3 Requirements (Mutual Exclusion, Progress, Bounded Wait)", "frequency": "7/8 papers", "recommended": true },
+        { "topic": "Hardware Instructions (TestAndSet & Swap)", "frequency": "3/8 papers", "recommended": false }
+      ]
+    }
+  ]
+}

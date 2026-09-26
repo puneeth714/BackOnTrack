@@ -1,0 +1,142 @@
+{
+  "benchmark_metadata": {
+    "suite_name": "Back on Track - Mid Term OS Triage Evaluation Benchmark",
+    "version": "1.0.0",
+    "target_course": "CS304 - Operating Systems",
+    "target_exam": "Mid Term Exam 2 (Internal Assessment)",
+    "evaluation_axes": [
+      "Syllabus Scoping Accuracy",
+      "Student Diagnostic Gap Alignment",
+      "Time Budget Feasibility",
+      "Prerequisite Dependency Topology",
+      "Terminology & Buzzword Compliance",
+      "Marks Yield Efficiency"
+    ]
+  },
+  "test_cases": [
+    {
+      "test_id": "TC_001_ROHAN_FEST_LEAD",
+      "persona_name": "Rohan Verma",
+      "category": "Severe Time Crunch / Post-Fest Panic",
+      "student_input_message": "I missed the last 3 weeks of Operating Systems because of the college cultural fest and my exam is this Friday. I only have about 2 days to prepare. What should I focus on to catch up and do well?",
+      "lms_context": {
+        "student_id": "STU_2022_CS104",
+        "attendance_pct": 59.4,
+        "interruption_reason": "Cultural Fest Lead Coordinator",
+        "mid_term_1_score": 8,
+        "max_mid_term_1": 50,
+        "flagged_weak_topics": ["Process Synchronization", "Deadlocks"],
+        "target_exam": "Mid Term Exam 2",
+        "target_exam_date": "2026-10-16",
+        "days_remaining": 2
+      },
+      "ground_truth_assertions": {
+        "must_exclude_modules": ["Module 1", "Module 5", "Module 4 (Part B)"],
+        "must_include_modules": ["Module 2 (Part B)", "Module 3", "Module 4 (Part A)"],
+        "must_include_topics": [
+          "Preemptive CPU Scheduling (SRTF & Round Robin)",
+          "Producer-Consumer Problem using Semaphores",
+          "Banker's Algorithm for Deadlock Avoidance"
+        ],
+        "must_deprioritize_topics": [
+          "Dining Philosophers with Monitors",
+          "Multilevel Feedback Queue Theory",
+          "Segmentation Hardware"
+        ],
+        "max_allowed_hours": 8.0,
+        "min_marks_yield": 35,
+        "forbidden_terms": ["20%", "80%", "80/20", "pareto", "80-20"]
+      }
+    },
+    {
+      "test_id": "TC_002_PRIYA_MEDICAL_PASS",
+      "persona_name": "Priya Sharma",
+      "category": "Medical Emergency / Safe Pass Goal",
+      "student_input_message": "I was hospitalized with severe dengue for 2 weeks. I missed all classes on Deadlocks and Paging. Midterm 2 is in 3 days. I can study 4 hours a day. I just need to pass safely.",
+      "lms_context": {
+        "student_id": "STU_2022_CS089",
+        "attendance_pct": 64.0,
+        "interruption_reason": "Medical Leave (Dengue Hospitalization)",
+        "mid_term_1_score": 14,
+        "max_mid_term_1": 50,
+        "flagged_weak_topics": ["Deadlocks", "Paging"],
+        "target_exam": "Mid Term Exam 2",
+        "target_exam_date": "2026-10-17",
+        "days_remaining": 3
+      },
+      "ground_truth_assertions": {
+        "must_exclude_modules": ["Module 1", "Module 5"],
+        "must_include_topics": [
+          "Banker's Algorithm for Deadlock Avoidance",
+          "Paging Hardware Architecture & TLB EMAT"
+        ],
+        "must_include_prerequisites": [
+          "Need Vector in Deadlock Avoidance",
+          "Logical Address to Physical Address"
+        ],
+        "max_allowed_hours": 12.0,
+        "min_marks_yield": 28,
+        "forbidden_terms": ["20%", "80%", "80/20", "pareto"]
+      }
+    },
+    {
+      "test_id": "TC_003_KEVIN_SPECIFIC_PANIC",
+      "persona_name": "Kevin D'Souza",
+      "category": "Topic-Specific Gap / 24-Hour Emergency",
+      "student_input_message": "I understand CPU scheduling algorithms well, but I completely freeze on Banker's algorithm and Semaphores. Exam is in 24 hours. Give me an ultra-lean 4-hour rescue plan.",
+      "lms_context": {
+        "student_id": "STU_2022_CS042",
+        "attendance_pct": 78.0,
+        "interruption_reason": "Hackathon / Placements",
+        "mid_term_1_score": 24,
+        "max_mid_term_1": 50,
+        "flagged_weak_topics": ["Semaphores", "Banker's Algorithm"],
+        "passed_topics": ["CPU Scheduling"],
+        "target_exam": "Mid Term Exam 2",
+        "target_exam_date": "2026-10-15",
+        "days_remaining": 1
+      },
+      "ground_truth_assertions": {
+        "must_exclude_modules": ["Module 1", "Module 5"],
+        "must_skip_or_minimize": ["CPU Scheduling Algorithms"],
+        "must_focus_topics": [
+          "Producer-Consumer Problem using Semaphores",
+          "Banker's Algorithm for Deadlock Avoidance"
+        ],
+        "max_allowed_hours": 4.5,
+        "min_marks_yield": 20,
+        "forbidden_terms": ["20%", "80%", "80/20", "pareto"]
+      }
+    },
+    {
+      "test_id": "TC_004_ANANYA_HIGH_RECOVERY",
+      "persona_name": "Ananya Iyer",
+      "category": "High-Potential GPA Recovery / Distinction Aim",
+      "student_input_message": "I missed two weeks due to the Inter-University Sports Meet. I scored 22/50 in Mid Term 1, but I need at least 40/50 in Mid Term 2 to maintain my CGPA. I have 3 full days (15 hours). Give me maximum mark coverage.",
+      "lms_context": {
+        "student_id": "STU_2022_CS012",
+        "attendance_pct": 68.5,
+        "interruption_reason": "National Sports Meet (Captain)",
+        "mid_term_1_score": 22,
+        "max_mid_term_1": 50,
+        "flagged_weak_topics": ["Synchronization", "Deadlock Detection"],
+        "target_exam": "Mid Term Exam 2",
+        "target_exam_date": "2026-10-17",
+        "days_remaining": 3
+      },
+      "ground_truth_assertions": {
+        "must_exclude_modules": ["Module 1", "Module 5"],
+        "must_include_topics": [
+          "Preemptive CPU Scheduling (SRTF & Round Robin)",
+          "Producer-Consumer Problem using Semaphores",
+          "Banker's Algorithm for Deadlock Avoidance",
+          "Paging Hardware Architecture & TLB EMAT",
+          "Deadlock 4 Necessary Conditions"
+        ],
+        "max_allowed_hours": 15.0,
+        "min_marks_yield": 40,
+        "forbidden_terms": ["20%", "80%", "80/20", "pareto"]
+      }
+    }
+  ]
+}

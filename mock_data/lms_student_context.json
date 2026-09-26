@@ -1,0 +1,85 @@
+{
+  "student": {
+    "student_id": "STU_2022_CS104",
+    "name": "Rohan Verma",
+    "semester": "5th Semester B.Tech Computer Science & Engineering",
+    "section": "CS-B",
+    "advisor": "Dr. S. K. Kulkarni"
+  },
+  "current_course": {
+    "course_code": "CS304",
+    "course_title": "Operating Systems",
+    "credits": 4,
+    "current_status": "HIGH_ACADEMIC_RISK"
+  },
+  "upcoming_exam": {
+    "exam_type": "Mid Term Exam (Internal Assessment 2)",
+    "exam_date": "2026-10-16",
+    "exam_time": "10:00 AM - 11:30 AM",
+    "exam_day": "Friday",
+    "total_marks": 50,
+    "weightage_in_final_grade": "25%",
+    "syllabus_coverage": {
+      "included_modules": [
+        "Module 2 (Part B): CPU Scheduling Algorithms",
+        "Module 3: Process Synchronization, Classical IPC & Deadlocks",
+        "Module 4 (Part A): Main Memory, Paging & Address Translation"
+      ],
+      "excluded_modules_reason": "Module 1 was already evaluated in Mid Term 1; Module 5 (Storage/File Systems) is scheduled post-midterm for End-Sem."
+    }
+  },
+  "attendance_and_engagement_logs": {
+    "overall_attendance_pct": 59.4,
+    "attendance_status": "CRITICAL_SHORTAGE_WARNING",
+    "interruption_period": {
+      "start_date": "2026-09-22",
+      "end_date": "2026-10-13",
+      "duration": "Missed the last 3 consecutive weeks (15 lecture hours)",
+      "reason_logged_in_portal": "Cultural Fest Lead Coordinator & medical leave (fever)",
+      "noc_submitted": true
+    },
+    "lms_activity_signals": {
+      "lecture_video_watch_time": "12% of total hours (missed Module 3 entirely)",
+      "quizzes_attempted": "1 of 4 completed",
+      "unopened_course_materials": [
+        "Module 3: Peterson's Solution and Counting Semaphores.pdf",
+        "Module 3: Banker's Algorithm Step-by-Step.pdf",
+        "Module 4: Two-Level Paging and TLB Architecture.pdf"
+      ],
+      "missed_lectures_digest": {
+        "period": "Weeks 7 to 9 (15 Lecture Hours)",
+        "slides_summary": [
+          "Lectures 19-22: Critical Section problem, race conditions, Peterson's software solution, and introduction to atomic semaphores wait(S) and signal(S).",
+          "Lectures 23-26: Classical synchronization problems (Bounded Buffer Producer-Consumer) and Deadlock 4 necessary conditions with Resource Allocation Graphs.",
+          "Lectures 27-30: Banker's safety and request algorithms, followed by Module 4 intro to Paging Hardware and Address Translation."
+        ],
+        "key_takeaway_for_student": "You missed the transition from theoretical concurrency to mathematical algorithms (Semaphores, Banker's, Paging). These 3 represent 76% of Mid Term 2 marks."
+      }
+    }
+  },
+  "academic_history_and_diagnostics": {
+    "mid_term_1_score": {
+      "marks_obtained": 8,
+      "max_marks": 50,
+      "class_average": 31.5,
+      "feedback_from_faculty": "Weak understanding of process states; left synchronization question blank."
+    },
+    "specific_weak_areas_flagged": [
+      {
+        "topic": "Process Synchronization & Semaphores",
+        "diagnostic_signal": "0/15 in Mid Term 1 question; zero LMS video watch time.",
+        "risk_level": "SEVERE"
+      },
+      {
+        "topic": "Banker's Algorithm & Deadlock Avoidance",
+        "diagnostic_signal": "Missed classroom numerical session; unattempted quiz #3.",
+        "risk_level": "HIGH"
+      },
+      {
+        "topic": "Paging & TLB Address Translation",
+        "diagnostic_signal": "Never opened lecture slides; foundational gap.",
+        "risk_level": "HIGH"
+      }
+    ]
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "subject": "Operating Systems (CS304 / PCC-CS402)",
+  "curriculum_standard": "Indian Technical University Standard (AICTE Model / VTU / Anna Univ / AKTU / Mumbai Univ)",
+  "total_marks": 100,
+  "passing_marks": 40,
+  "modules": [
+    {
+      "module_id": "M1",
+      "module_name": "Module 1: Introduction & System Structures",
+      "historical_weightage": 12,
+      "roi_category": "LOW_PRIORITY",
+      "topics": [
+        {
+          "name": "OS Services & Dual Mode Operation",
+          "historical_avg_marks": 5,
+          "difficulty_hours": 1.5,
+          "status": "SKIP_IF_CRUNCHED",
+          "exam_pattern": "Short answer 2-5 marks. Often low yield compared to numericals."
+        },
+        {
+          "name": "System Calls (fork, exec, wait)",
+          "historical_avg_marks": 7,
+          "difficulty_hours": 2.0,
+          "status": "CORE_FOUNDATION",
+          "exam_pattern": "Repeated question: fork() tracing code snippets (2-3 times in last 5 years)."
+        }
+      ]
+    },
+    {
+      "module_id": "M2",
+      "module_name": "Module 2: Process Management & CPU Scheduling",
+      "historical_weightage": 26,
+      "roi_category": "GOLDEN_20_MUST_SOLVE",
+      "topics": [
+        {
+          "name": "Process States & PCB Lifecycle",
+          "historical_avg_marks": 6,
+          "difficulty_hours": 1.0,
+          "status": "FOUNDATIONAL_UNLOCK",
+          "exam_pattern": "State transition diagram is a guaranteed 5-mark question; unlocks CPU Scheduling.",
+          "unlocks": ["CPU Scheduling Algorithms", "Process Synchronization"]
+        },
+        {
+          "name": "CPU Scheduling Algorithms (FCFS, SJF, SRTF, Round Robin)",
+          "historical_avg_marks": 14,
+          "difficulty_hours": 3.0,
+          "status": "GOLDEN_20_MUST_SOLVE",
+          "exam_pattern": "Guaranteed 10-12 marker numerical: Gantt chart + Turnaround Time + Waiting Time calculation (100% past 5 years).",
+          "high_probability_question": "Given 5 processes with Arrival & Burst times, draw Gantt Chart for SRTF and Round Robin (q=2) and calculate avg TAT and WT."
+        },
+        {
+          "name": "Multithreading Models & Thread Libraries",
+          "historical_avg_marks": 6,
+          "difficulty_hours": 2.0,
+          "status": "SAFE_TO_DEPRIORITIZE",
+          "exam_pattern": "Theory 1:1, M:1, M:M models. Often comes in internal choice against scheduling numerical."
+        }
+      ]
+    },
+    {
+      "module_id": "M3",
+      "module_name": "Module 3: Process Synchronization & Deadlocks",
+      "historical_weightage": 28,
+      "roi_category": "GOLDEN_20_MUST_SOLVE",
+      "topics": [
+        {
+          "name": "Critical Section Problem & Semaphores",
+          "historical_avg_marks": 8,
+          "difficulty_hours": 2.5,
+          "status": "FOUNDATIONAL_UNLOCK",
+          "exam_pattern": "Mutual exclusion criteria + wait()/signal() code definitions.",
+          "unlocks": ["Classical IPC Problems", "Deadlocks"]
+        },
+        {
+          "name": "Classical Synchronization: Producer-Consumer & Readers-Writers",
+          "historical_avg_marks": 10,
+          "difficulty_hours": 2.5,
+          "status": "GOLDEN_20_MUST_SOLVE",
+          "exam_pattern": "Guaranteed 8-10 marker code/pseudo-code implementation using semaphores.",
+          "high_probability_question": "Explain bounded-buffer Producer-Consumer problem using counting and binary semaphores with full pseudo-code."
+        },
+        {
+          "name": "Banker's Algorithm for Deadlock Avoidance",
+          "historical_avg_marks": 10,
+          "difficulty_hours": 2.0,
+          "status": "GOLDEN_20_MUST_SOLVE",
+          "exam_pattern": "Guaranteed 10-marker numerical (Need matrix, Safety algorithm sequence, Resource request algorithm). 90%+ occurrence.",
+          "high_probability_question": "Given Allocation, Max, and Available matrices for 5 processes and 3 resource types, determine if system is in safe state. If request arrives for P1(1,0,2), can it be granted?"
+        }
+      ]
+    },
+    {
+      "module_id": "M4",
+      "module_name": "Module 4: Memory Management & Virtual Memory",
+      "historical_weightage": 22,
+      "roi_category": "GOLDEN_20_MUST_SOLVE",
+      "topics": [
+        {
+          "name": "Paging Hardware, TLB & Address Translation",
+          "historical_avg_marks": 8,
+          "difficulty_hours": 2.0,
+          "status": "FOUNDATIONAL_UNLOCK",
+          "exam_pattern": "Address translation diagram (Page # + Offset) and Effective Memory Access Time (EMAT) numerical.",
+          "unlocks": ["Virtual Memory & Page Replacement"]
+        },
+        {
+          "name": "Page Replacement Algorithms (FIFO, LRU, Optimal)",
+          "historical_avg_marks": 10,
+          "difficulty_hours": 2.0,
+          "status": "GOLDEN_20_MUST_SOLVE",
+          "exam_pattern": "Guaranteed 8-10 marker numerical: Given page reference string with 3/4 frames, calculate page faults.",
+          "high_probability_question": "Consider reference string: 7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1 with 3 frames. Calculate page faults for FIFO and LRU."
+        },
+        {
+          "name": "Segmentation & Thrashing",
+          "historical_avg_marks": 4,
+          "difficulty_hours": 1.5,
+          "status": "QUICK_SKIM",
+          "exam_pattern": "Short note on Thrashing causes and working set model (5 marks)."
+        }
+      ]
+    },
+    {
+      "module_id": "M5",
+      "module_name": "Module 5: Storage & File Systems",
+      "historical_weightage": 12,
+      "roi_category": "SELECTIVE_HIGH_ROI",
+      "topics": [
+        {
+          "name": "Disk Scheduling Algorithms (FCFS, SSTF, SCAN, C-SCAN)",
+          "historical_avg_marks": 8,
+          "difficulty_hours": 1.5,
+          "status": "GOLDEN_20_MUST_SOLVE",
+          "exam_pattern": "Easiest numerical in OS: Total head movements calculation for given cylinder track requests. High return, low effort.",
+          "high_probability_question": "Disk queue: 98, 183, 37, 122, 14, 124, 65, 67. Head at 53. Calculate total cylinder movements for SCAN and SSTF."
+        },
+        {
+          "name": "File Allocation Methods (Contiguous, Linked, Indexed)",
+          "historical_avg_marks": 4,
+          "difficulty_hours": 2.0,
+          "status": "SAFE_TO_DEPRIORITIZE",
+          "exam_pattern": "Comparative theory question, low scoring variance."
+        },
+        {
+          "name": "RAID Levels Architecture",
+          "historical_avg_marks": 0,
+          "difficulty_hours": 2.5,
+          "status": "SAFE_TO_SKIP",
+          "exam_pattern": "Rarely appears as a compulsory question; high memorization cost."
+        }
+      ]
+    }
+  ],
+  "pareto_summary": {
+    "total_syllabus_topics": 13,
+    "golden_20_topics_count": 5,
+    "golden_20_topics_pct": "23% of syllabus",
+    "golden_20_marks_yield": "72 out of 100 marks",
+    "estimated_prep_hours_needed": "12.5 hours total",
+    "safe_to_skip_or_skim_topics": 8,
+    "hours_saved_by_skipping_noise": "15+ hours"
+  }
+}

@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back on Track – 5-Topic Exam Recovery Engine</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    pre, code { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen">
+
+  <!-- Sticky Top Switcher Bar -->
+  <div class="bg-gray-900 text-white px-6 py-2.5 text-xs flex items-center justify-between sticky top-0 z-50">
+    <div class="flex items-center space-x-2">
+      <span class="px-2 py-0.5 rounded font-bold uppercase bg-purple-600 text-white text-[10px]">Option 2</span>
+      <span class="font-semibold text-gray-200">5-Topic Complete Exam Recovery & Assessment Suite</span>
+      <span class="text-purple-400 font-medium">• Grounded in Sri Indu R20CSE2202</span>
+    </div>
+    <div class="flex items-center space-x-3">
+      <a href="option1.html" class="px-2.5 py-1 rounded bg-gray-800 text-gray-300 hover:text-white">1. Chat-First</a>
+      <a href="option2.html" class="px-2.5 py-1 rounded bg-purple-600 text-white font-bold">2. Dashboard-First</a>
+      <a href="option3.html" class="px-2.5 py-1 rounded bg-gray-800 text-gray-300 hover:text-white">3. Hybrid (Best)</a>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- MAIN DASHBOARD & RECOVERY TIMELINE VIEW                                   -->
+  <!-- ========================================================================= -->
+  <div id="view-hybrid-main" class="max-w-5xl mx-auto px-6 py-8">
+
+    <!-- Header Pitch Banner -->
+    <div class="border-b border-gray-200 pb-6 mb-8">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center space-x-2 text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">
+            <span>BITSoM Vertex 2026 • Room T03</span>
+            <span>•</span>
+            <span class="text-emerald-600">Autonomous Closed-Loop Engine</span>
+          </div>
+          <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Back on Track</h1>
+          <p class="text-sm text-gray-600 mt-1">Autonomous academic triage, syllabus scoping, and closed-loop study pace recalibration.</p>
+        </div>
+        
+        <div class="flex items-center space-x-3 bg-white border border-gray-200 rounded-xl px-4 py-2.5 shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm">
+            RV
+          </div>
+          <div>
+            <div class="text-xs font-bold text-gray-900">Rohan Verma (1RV22CS104)</div>
+            <div class="text-[11px] text-gray-500">CS304 Operating Systems • 59.4% Att.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Official Grounding Citation Box -->
+    <div class="bg-blue-50/70 border border-blue-200 rounded-xl p-3.5 mb-6 flex flex-wrap items-center justify-between gap-3 text-xs text-blue-900">
+      <div class="flex items-center space-x-2">
+        <i class="fa-solid fa-graduation-cap text-blue-600 text-base"></i>
+        <span>
+          <b>Course Material Grounded in:</b> Sri Indu College of Engg & Tech • 
+          <a href="https://sriindu.ac.in/wp-content/uploads/2023/10/R20CSE2202-OPERATING-SYSTEMS.pdf" target="_blank" class="underline font-semibold hover:text-blue-800">
+            R20CSE2202 Operating Systems (92-Page Notes by A. Sandeep, CSE)
+          </a>
+        </span>
+      </div>
+      <span class="px-2.5 py-1 rounded bg-blue-100 text-blue-800 font-medium text-[11px]">
+        5 In-Scope Exam Topics Mapped
+      </span>
+    </div>
+
+    <!-- Triage Input Hero Box -->
+    <div class="bg-white border-2 border-gray-200 hover:border-blue-400 focus-within:border-blue-600 rounded-2xl p-5 shadow-sm mb-6 transition">
+      <div class="flex items-start space-x-3">
+        <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0 mt-1">
+          <i class="fa-solid fa-comment-dots"></i>
+        </div>
+        <div class="flex-1">
+          <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">What's your current situation?</label>
+          <input type="text" id="emergency-input" 
+            value="I missed 3 weeks due to Malhar Fest organizing, exam is Friday, I only have 6 hours left. How do I pass?" 
+            class="w-full text-sm text-gray-900 focus:outline-none placeholder-gray-400">
+        </div>
+        <button onclick="triggerADKWorkflow()" id="btn-recalibrate" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow-sm transition flex items-center shrink-0">
+          <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Run Triage Engine
+        </button>
+      </div>
+
+      <!-- Quick Emergency Presets -->
+      <div class="mt-3 pt-3 border-t border-gray-100 flex flex-wrap items-center gap-2 text-xs">
+        <span class="text-gray-400 font-medium">Quick Presets:</span>
+        <button onclick="setScenario(1)" class="px-2.5 py-1 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 transition">
+          🎉 Fest Organizer (6h budget)
+        </button>
+        <button onclick="setScenario(2)" class="px-2.5 py-1 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 transition">
+          🏥 Medical Leave (Deadlocks & Paging)
+        </button>
+        <button onclick="setScenario(3)" class="px-2.5 py-1 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 transition">
+          ⚡ 24h Before Exam Panic
+        </button>
+      </div>
+    </div>
+
+    <!-- Live ADK 2.0 Execution Banner -->
+    <div id="adk-trace-box" class="bg-gray-900 text-gray-200 rounded-xl p-4 mb-8 font-mono text-xs shadow-md">
+      <div class="flex items-center justify-between border-b border-gray-800 pb-2 mb-3">
+        <div class="flex items-center space-x-2 text-emerald-400">
+          <i class="fa-solid fa-circle-nodes"></i>
+          <span class="font-bold">Google ADK 2.0 Graph Workflow</span>
+          <span class="text-gray-400 text-[10px]">• Gemini 2.5 Flash</span>
+        </div>
+        <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 text-[10px] font-bold border border-emerald-800">
+          STATUS: EXECUTED (240ms)
+        </span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-2 text-[11px]">
+        <div class="p-2 rounded bg-gray-800/70 border border-gray-700">
+          <span class="text-blue-400 font-bold block mb-1">Node 1: IntentParser</span>
+          <span>Parsed 2 days, 6.0h remaining budget</span>
+        </div>
+        <div class="p-2 rounded bg-gray-800/70 border border-gray-700">
+          <span class="text-purple-400 font-bold block mb-1">Node 2: LMS Context</span>
+          <span>Matched 59.4% attendance & IA-1 (8/50)</span>
+        </div>
+        <div class="p-2 rounded bg-gray-800/70 border border-gray-700">
+          <span class="text-amber-400 font-bold block mb-1">Node 3: Syllabus Scope</span>
+          <span>Pruned Units 1 & 5 (Saves 6.5h)</span>
+        </div>
+        <div class="p-2 rounded bg-gray-800/70 border border-gray-700">
+          <span class="text-emerald-400 font-bold block mb-1">Node 4: Plan Synthesis</span>
+          <span>5 Topics Scoped • 8.53 Marks/Hour Velocity</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Metrics Ribbon -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+        <span class="text-xs font-semibold text-gray-500">Exam Target Score</span>
+        <div class="text-2xl font-black text-gray-900 mt-1">45 <span class="text-xs text-gray-500 font-normal">/ 50 Marks</span></div>
+        <span class="text-[11px] text-emerald-600 font-bold">+37 Mark Net Recovery</span>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+        <span class="text-xs font-semibold text-gray-500">Unmastered Gap Closed</span>
+        <div class="text-2xl font-black text-blue-600 mt-1" id="metric-gap-closed">76.2%</div>
+        <span class="text-[11px] text-gray-500 font-medium">Standardized Hake Gain</span>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+        <span class="text-xs font-semibold text-gray-500">Study Velocity</span>
+        <div class="text-2xl font-black text-amber-600 mt-1" id="metric-velocity">8.53 <span class="text-xs text-gray-500 font-normal">Marks/h</span></div>
+        <span class="text-[11px] text-gray-500" id="metric-velocity-sub">0.142 marks / min</span>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+        <span class="text-xs font-semibold text-gray-500">Progress (Completed)</span>
+        <div class="text-2xl font-black text-emerald-600 mt-1" id="metric-progress-pct">0% (0/5)</div>
+        <div class="w-full bg-gray-100 rounded-full h-1.5 mt-2">
+          <div id="metric-progress-bar" class="bg-emerald-600 h-1.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommendations Strip (Appears when student finishes Overall Quiz or has weak topics) -->
+    <div id="review-recommendations-banner" class="hidden bg-amber-50 border-2 border-amber-300 rounded-xl p-5 mb-8 text-amber-900 shadow-sm">
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="text-sm font-bold flex items-center">
+          <i class="fa-solid fa-arrows-rotate text-amber-600 mr-2 text-base"></i>
+          Recommended Topics to Read Again (Diagnostic Weak Areas)
+        </h3>
+        <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-200 text-amber-900" id="review-count-badge">2 Topics Need Review</span>
+      </div>
+      <p class="text-xs text-amber-800 mb-3">Based on your recent assessment answers, here are the topics you should re-read to guarantee full marks:</p>
+      <div class="flex flex-wrap gap-2.5" id="review-topics-chips"></div>
+    </div>
+
+    <!-- 5 Topics Header & Overall Quiz Launcher Button -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+      <div>
+        <h2 class="text-lg font-bold text-gray-900">5 High-Yield Midterm Recovery Modules</h2>
+        <p class="text-xs text-gray-500">Each topic includes in-depth theory, worked 10-mark problem, exam traps, and a 3-question MCQ quiz.</p>
+      </div>
+      <button onclick="openOverallAssessment()" class="px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center shrink-0">
+        <i class="fa-solid fa-clipboard-check mr-2"></i> Overall Exam Mock Quiz (5 Topics)
+      </button>
+    </div>
+
+    <!-- 5 Topics Cards List -->
+    <div class="space-y-3.5 mb-8">
+
+      <!-- Topic 1 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:border-blue-400 transition flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
+            <span class="font-bold text-blue-700">Unit 2 • Lectures 9-12 (P.19-24)</span>
+            <span>•</span>
+            <span class="text-emerald-700 font-bold">12 Marks Guaranteed</span>
+            <span>•</span>
+            <span class="text-purple-600 font-medium"><i class="fa-solid fa-list-check mr-1"></i>3-Question Quiz</span>
+          </div>
+          <h3 class="text-base font-bold text-gray-900">1. Preemptive CPU Scheduling (SRTF & Round Robin)</h3>
+          <p class="text-xs text-gray-600 mt-1">Gantt chart tick-by-tick arrival preemption, TAT, and Waiting Time calculation.</p>
+        </div>
+        <div class="flex items-center space-x-3 shrink-0">
+          <span id="badge-cpu" class="text-xs text-gray-500 font-medium">Not started</span>
+          <button onclick="openReader('cpu-scheduling')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-lg shadow-sm transition flex items-center">
+            Read & Quiz <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Topic 2 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:border-blue-400 transition flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
+            <span class="font-bold text-purple-700">Unit 3 • Lectures 16-20 (P.31-40)</span>
+            <span>•</span>
+            <span class="text-emerald-700 font-bold">10 Marks Compulsory</span>
+            <span>•</span>
+            <span class="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-bold">IA-1 Gap</span>
+          </div>
+          <h3 class="text-base font-bold text-gray-900">2. Process Synchronization (Semaphores & Bounded Buffer)</h3>
+          <p class="text-xs text-gray-600 mt-1">Bounded buffer with mutex, empty, and full counting semaphores code.</p>
+        </div>
+        <div class="flex items-center space-x-3 shrink-0">
+          <span id="badge-sync" class="text-xs text-gray-500 font-medium">Not started</span>
+          <button onclick="openReader('synchronization')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-lg shadow-sm transition flex items-center">
+            Read & Quiz <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Topic 3 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:border-blue-400 transition flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
+            <span class="font-bold text-amber-700">Unit 3 • Lectures 25-28 (P.43-52)</span>
+            <span>•</span>
+            <span class="text-emerald-700 font-bold">10 Marks Compulsory</span>
+            <span>•</span>
+            <span class="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-bold">IA-1 Gap</span>
+          </div>
+          <h3 class="text-base font-bold text-gray-900">3. Deadlocks (Banker's Algorithm & Safe State Verification)</h3>
+          <p class="text-xs text-gray-600 mt-1">Need matrix subtraction (Need = Max - Allocation) and step-by-step safe sequence.</p>
+        </div>
+        <div class="flex items-center space-x-3 shrink-0">
+          <span id="badge-deadlocks" class="text-xs text-gray-500 font-medium">Not started</span>
+          <button onclick="openReader('deadlocks')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-lg shadow-sm transition flex items-center">
+            Read & Quiz <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Topic 4 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:border-blue-400 transition flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
+            <span class="font-bold text-cyan-700">Unit 4 • Lectures 29-33 (P.53-64)</span>
+            <span>•</span>
+            <span class="text-emerald-700 font-bold">10 Marks Numerical</span>
+            <span>•</span>
+            <span class="text-purple-600 font-medium"><i class="fa-solid fa-list-check mr-1"></i>3-Question Quiz</span>
+          </div>
+          <h3 class="text-base font-bold text-gray-900">4. Main Memory & Paging Hardware (TLB & Address Translation)</h3>
+          <p class="text-xs text-gray-600 mt-1">CPU logical (p,d) to physical (f,d) lookup diagram, page faults, and EMAT formula.</p>
+        </div>
+        <div class="flex items-center space-x-3 shrink-0">
+          <span id="badge-paging" class="text-xs text-gray-500 font-medium">Not started</span>
+          <button onclick="openReader('memory-management')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-lg shadow-sm transition flex items-center">
+            Read & Quiz <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Topic 5 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:border-blue-400 transition flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
+            <span class="font-bold text-emerald-700">Unit 4 • Lectures 34-37 (P.65-76)</span>
+            <span>•</span>
+            <span class="text-emerald-700 font-bold">10 Marks Numerical</span>
+            <span>•</span>
+            <span class="text-purple-600 font-medium"><i class="fa-solid fa-list-check mr-1"></i>3-Question Quiz</span>
+          </div>
+          <h3 class="text-base font-bold text-gray-900">5. Virtual Memory & Page Replacement (FIFO, LRU & Belady's Anomaly)</h3>
+          <p class="text-xs text-gray-600 mt-1">Demand paging fault routine, FIFO vs LRU reference string simulation, and frame anomaly.</p>
+        </div>
+        <div class="flex items-center space-x-3 shrink-0">
+          <span id="badge-vm" class="text-xs text-gray-500 font-medium">Not started</span>
+          <button onclick="openReader('virtual-memory')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-lg shadow-sm transition flex items-center">
+            Read & Quiz <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Deprioritized Modules Note -->
+    <div class="bg-gray-100 rounded-xl p-4 text-xs text-gray-600 flex items-center justify-between">
+      <span><i class="fa-solid fa-shield-halved text-blue-600 mr-2 text-sm"></i> <b>Safe Sleep Guaranteed:</b> Unit 1 (System Calls) & Unit 5 (Disk Scheduling) are pruned to save 6.5 hours of study. Focus is 100% on the 50 marks tested on Friday.</span>
+      <span class="font-bold text-gray-500">6.5 Hours Pruned</span>
+    </div>
+
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- DEDICATED FULL-PAGE TOPIC READER UI                                       -->
+  <!-- ========================================================================= -->
+  <div id="view-clean-reader" class="hidden bg-white min-h-screen">
+    
+    <!-- Top Sticky Bar -->
+    <div class="sticky top-0 bg-white/95 backdrop-blur border-b border-gray-200 z-30 px-6 py-3.5">
+      <div class="max-w-3xl mx-auto flex items-center justify-between">
+        <button onclick="backToMain()" class="inline-flex items-center text-sm font-semibold text-gray-600 hover:text-gray-900 transition">
+          <i class="fa-solid fa-arrow-left mr-2"></i> Back to Recovery Plan
+        </button>
+        
+        <div class="flex items-center space-x-3">
+          <span id="reader-marks-tag" class="text-xs font-semibold px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-md">
+            10 Marks
+          </span>
+          <button onclick="finishTopicReading()" class="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg shadow-sm transition flex items-center">
+            <i class="fa-solid fa-check mr-1.5"></i> Mark Done
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Article -->
+    <article class="max-w-3xl mx-auto px-6 py-10">
+      
+      <!-- Grounded Citation Strip -->
+      <div class="mb-4 inline-flex items-center space-x-2 text-xs bg-blue-50 text-blue-900 px-3 py-1.5 rounded-lg border border-blue-200">
+        <i class="fa-solid fa-book-bookmark text-blue-600"></i>
+        <span><b>Grounded in Official Syllabus:</b> Sri Indu R20CSE2202 • <span id="reader-citation" class="font-semibold text-blue-800">Lecture Notes</span></span>
+      </div>
+
+      <div class="mb-8 border-b border-gray-100 pb-6">
+        <span id="reader-module" class="text-xs font-bold uppercase tracking-wider text-blue-600">Module</span>
+        <h1 id="reader-title" class="text-3xl font-extrabold text-gray-900 mt-1">Topic Title</h1>
+        <p id="reader-subtitle" class="text-base text-gray-600 mt-2 leading-relaxed">Topic Subtitle</p>
+      </div>
+
+      <!-- Section 1: Detailed Concept & Theory -->
+      <section class="mb-10">
+        <h2 class="text-lg font-bold text-gray-900 mb-3 flex items-center">
+          <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold mr-2.5">1</span>
+          The Concept in Depth (Exam Mental Model)
+        </h2>
+        <div class="bg-blue-50/70 border-l-4 border-blue-500 p-5 rounded-r-xl text-sm text-blue-950 leading-relaxed space-y-2.5" id="reader-concept-box"></div>
+      </section>
+
+      <!-- Section 2: Visual Model & State Diagrams -->
+      <section class="mb-10">
+        <h2 class="text-lg font-bold text-gray-900 mb-3 flex items-center">
+          <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xs font-bold mr-2.5">2</span>
+          How it Works (The Visual Architectural Model)
+        </h2>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-sm text-gray-800" id="reader-diagram-box"></div>
+      </section>
+
+      <!-- Section 3: Exact 10-Mark Model Solved Problem -->
+      <section class="mb-10">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-lg font-bold text-gray-900 flex items-center">
+            <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs font-bold mr-2.5">3</span>
+            Exact 10-Mark Model Answer (Examiner Step-Marking Scheme)
+          </h2>
+          <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">10/10 University Standard</span>
+        </div>
+        <div class="bg-gray-900 text-gray-100 rounded-xl p-5 overflow-x-auto text-xs font-mono shadow-inner mb-4">
+          <pre id="reader-code-content" class="leading-relaxed"></pre>
+        </div>
+      </section>
+
+      <!-- Section 4: Critical Exam Traps -->
+      <section class="mb-10">
+        <h2 class="text-lg font-bold text-gray-900 mb-3 flex items-center">
+          <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-bold mr-2.5">4</span>
+          Critical University Exam Traps
+        </h2>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 text-sm text-amber-950 space-y-2 leading-relaxed" id="reader-trap-box"></div>
+      </section>
+
+      <!-- Section 5: Topic MCQ Suite (3 Progressive Questions) -->
+      <section class="mb-12">
+        <div class="flex items-center justify-between mb-4 border-b border-gray-200 pb-3">
+          <div>
+            <h2 class="text-lg font-bold text-gray-900 flex items-center">
+              <span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-xs font-bold mr-2.5">5</span>
+              Topic Mastery Diagnostic Suite (3 Progressive MCQs)
+            </h2>
+            <p class="text-xs text-gray-500 mt-0.5">Answer all 3 questions to verify mastery before marking completed.</p>
+          </div>
+          <span class="text-xs font-bold px-2.5 py-1 rounded bg-indigo-50 text-indigo-700 border border-indigo-200" id="topic-quiz-score-badge">
+            Score: 0 / 3
+          </span>
+        </div>
+
+        <div class="space-y-6" id="topic-mcq-container">
+          <!-- Dynamically populated 3 MCQs -->
+        </div>
+      </section>
+
+      <!-- Bottom Action Bar -->
+      <div class="border-t border-gray-200 pt-8 flex items-center justify-between">
+        <button onclick="backToMain()" class="text-sm font-semibold text-gray-600 hover:text-gray-900">
+          ← Back to recovery plan
+        </button>
+        <button onclick="finishTopicReading()" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-md transition flex items-center">
+          <i class="fa-solid fa-check-circle mr-2"></i> Finished Reading & Quiz • Mark Completed
+        </button>
+      </div>
+    </article>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- OVERALL COMPREHENSIVE ASSESSMENT (FINAL EXAM MOCK MODAL)                 -->
+  <!-- ========================================================================= -->
+  <div id="view-overall-assessment" class="hidden bg-white min-h-screen">
+    
+    <!-- Top Sticky Bar -->
+    <div class="sticky top-0 bg-white/95 backdrop-blur border-b border-gray-200 z-30 px-6 py-3.5">
+      <div class="max-w-3xl mx-auto flex items-center justify-between">
+        <button onclick="backToMain()" class="inline-flex items-center text-sm font-semibold text-gray-600 hover:text-gray-900 transition">
+          <i class="fa-solid fa-arrow-left mr-2"></i> Exit Assessment
+        </button>
+        <span class="text-xs font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full">
+          Comprehensive Midterm 2 Mock Exam (5 Questions)
+        </span>
+      </div>
+    </div>
+
+    <article class="max-w-3xl mx-auto px-6 py-10">
+      <div class="border-b border-gray-200 pb-6 mb-8">
+        <span class="text-xs font-bold uppercase tracking-wider text-purple-600">Cross-Topic Evaluation</span>
+        <h1 class="text-3xl font-extrabold text-gray-900 mt-1">Overall Exam Readiness Check</h1>
+        <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+          This comprehensive check features 1 question from each of the 5 topics. Completing this will highlight any remaining blind spots and recommend exactly which topics you should re-read.
+        </p>
+      </div>
+
+      <!-- 5 Cross-Topic Questions Container -->
+      <div class="space-y-8 mb-10" id="overall-questions-container"></div>
+
+      <!-- Overall Result Box -->
+      <div id="overall-result-box" class="hidden bg-gray-50 border-2 border-indigo-200 rounded-2xl p-6 mb-8 text-center">
+        <h2 class="text-xl font-bold text-gray-900 mb-1" id="overall-result-title">Overall Score: 0 / 5</h2>
+        <p class="text-xs text-gray-600 mb-4" id="overall-result-desc"></p>
+        <button onclick="applyReviewRecommendations()" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-xl shadow transition">
+          Update Recovery Plan & View Review Topics →
+        </button>
+      </div>
+
+      <div class="border-t border-gray-200 pt-6 flex justify-between items-center">
+        <button onclick="backToMain()" class="text-sm text-gray-500 hover:text-gray-800 font-semibold">
+          Cancel & Return
+        </button>
+        <button onclick="submitOverallAssessment()" id="btn-submit-overall" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm rounded-xl shadow-md transition flex items-center">
+          <i class="fa-solid fa-square-check mr-2"></i> Submit Final Exam Assessment
+        </button>
+      </div>
+    </article>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- APPLICATION DATA & SCRIPTS                                                -->
+  <!-- ========================================================================= -->
+  <script>
+    let currentTopicKey = null;
+    let completedTopics = new Set();
+    let topicQuizScores = {}; // topicKey -> { q0: bool, q1: bool, q2: bool }
+    let overallAnswers = {};  // questionIdx -> selectedIdx
+    let weakTopicsForReview = new Set();
+
+    // The 5 In-Scope Topics grounded in Sri Indu Lecture Notes
+    const topicsData = {
+      'cpu-scheduling': {
+        key: 'cpu-scheduling',
+        module: 'Unit 2 • Process Management & CPU Scheduling',
+        citation: 'Lectures 9-12 (Pages 19-24 in Sri Indu Notes)',
+        marks: '12 Marks Numerical',
+        title: 'Preemptive CPU Scheduling (SRTF & Round Robin)',
+        subtitle: 'Gantt chart construction tick-by-tick, calculating Turnaround Time (TAT) and Waiting Time (WT).',
+        concept: `
+          <p><strong>1. Scheduling Criteria (Notes P.19):</strong> CPU utilization, Throughput, Turnaround time, Waiting time, and Response time. The goal is to maximize throughput and minimize average waiting time.</p>
+          <p><strong>2. Preemption Rules:</strong> Scheduling is non-preemptive ONLY when a process switches from running to waiting (I/O) or terminates. All other scheduling—such as when a process switches from running to ready (timer interrupt) or waiting to ready—is <em>preemptive</em>.</p>
+          <p><strong>3. Shortest Remaining Time First (SRTF):</strong> Preemptive SJF. When a newcomer arrives at time <em>t</em>, compare its burst time with the <em>remaining</em> time of the active process. If strictly smaller, the active process is preempted to the Ready Queue immediately.</p>
+          <p><strong>4. Round Robin (RR):</strong> Each process receives a small unit of CPU time (time quantum <em>q</em>, typically 10–100 ms). If burst > <em>q</em>, process is preempted and put at the tail of ready queue. If <em>q</em> is very large, RR degenerates to FCFS; if <em>q</em> is very small, context-switch overhead dominates.</p>
+        `,
+        diagram: `<div class="font-mono text-xs leading-5 bg-white p-4 rounded border border-gray-200 overflow-x-auto">
+Tick-by-Tick Gantt Chart (SRTF):
+Time:  0      1             5                 10             17
+       +------+-------------+-----------------+--------------+
+       |  P1  |     P2      |       P1        |      P3      |
+       +------+-------------+-----------------+--------------+
+Queue State:
+t=0: P1 arrives (BT: 8). Starts execution.
+t=1: P2 arrives (BT: 4). P1 remaining is 7. Since 4 < 7 -> PREEMPT P1!
+t=5: P2 finishes. Ready Queue: P1 (rem: 7), P3 (rem: 9). P1 runs next.
+t=10: P1 finishes. P3 runs next.
+t=17: P3 finishes. All processes complete.
+        </div>`,
+        code: `// Complete 10-Mark Solved Numerical (Notes P.21):
+Process Table:
++---------+--------------+------------+-----------------+-------------+--------------+
+| Process | Arrival (AT) | Burst (BT) | Completion (CT) | TAT (CT-AT) |  WT (TAT-BT) |
++---------+--------------+------------+-----------------+-------------+--------------+
+|   P1    |      0       |     8      |       10        | 10 - 0 = 10 |  10 - 8 = 2  |
+|   P2    |      1       |     4      |        5        |  5 - 1 = 4  |   4 - 4 = 0  |
+|   P3    |      2       |     9      |       17        | 17 - 2 = 15 |  15 - 9 = 6  |
++---------+--------------+------------+-----------------+-------------+--------------+
+
+Examiner Step-Marking Scheme:
+• Step 1: Accurate Gantt chart with arrival tick preemption  --> 3 Marks
+• Step 2: Completion Time (CT) calculations                  --> 2 Marks
+• Step 3: Turnaround Time: TAT = CT - AT                    --> 2 Marks
+• Step 4: Waiting Time: WT = TAT - BT                       --> 2 Marks
+• Step 5: Average WT = (2 + 0 + 6) / 3 = 8 / 3 = 2.67 ms    --> 1 Mark`,
+        trap: `
+          <p><strong>• Trap 1: Forgetting elapsed time on preemption:</strong> When P2 arrives at t=1, P1 has already run for 1ms. Its remaining burst is 7ms, NOT 8ms! Forgetting this ruins CT, TAT, and WT.</p>
+          <p><strong>• Trap 2: Tie-breaking arrival:</strong> When two processes have identical remaining bursts, FCFS arrival order must break the tie.</p>
+          <p><strong>• Trap 3: Turnaround vs Waiting Time formula:</strong> TAT = CT - AT. WT = TAT - BT. Never calculate WT = CT - BT (this ignores arrival time!).</p>
+        `,
+        mcqs: [
+          {
+            q: "Under which condition is CPU scheduling strictly non-preemptive?",
+            opts: ["When a timer interrupt expires", "When a process switches from Running to Waiting state (I/O request)", "When a higher-priority process arrives in Ready queue", "When a process completes its Round Robin time quantum"],
+            correct: 1,
+            exp: "Sri Indu Notes P.19: Scheduling is non-preemptive only when a process voluntarily relinquishes CPU: (1) Running to Waiting, or (2) Terminating."
+          },
+          {
+            q: "In SRTF, Process P1 (AT=0, BT=8) is running. At t=1, P2 (BT=4) arrives. What is P1's remaining burst when P2 finishes execution at t=5?",
+            opts: ["8 ms", "7 ms", "4 ms", "0 ms"],
+            correct: 1,
+            exp: "P1 ran from t=0 to t=1 (1ms). Its remaining burst is 8 - 1 = 7ms. P2 runs from t=1 to t=5, so P1 still has 7ms left at t=5."
+          },
+          {
+            q: "What happens if the time quantum q in Round Robin scheduling is set extremely large (e.g., q > maximum burst time)?",
+            opts: ["The system immediately deadlocks", "Round Robin behaves identically to First-Come First-Served (FCFS)", "Context-switching overhead increases to 100%", "Throughput becomes zero"],
+            correct: 1,
+            exp: "Sri Indu Notes P.23: If the time quantum is extremely large, every process completes in its first turn, making RR degenerate into FCFS."
+          }
+        ]
+      },
+
+      'synchronization': {
+        key: 'synchronization',
+        module: 'Unit 3 • Process Synchronization & Semaphores',
+        citation: 'Lectures 16-20 (Pages 31-40 in Sri Indu Notes)',
+        marks: '10 Marks Compulsory',
+        title: 'Process Synchronization (Semaphores & Bounded Buffer)',
+        subtitle: 'The classic synchronization problem involving a fixed-size shared buffer, producer, and consumer.',
+        concept: `
+          <p><strong>1. The Critical Section Problem (Notes P.31):</strong> A section of code where a process accesses shared variables. Any valid solution must satisfy: (1) Mutual Exclusion, (2) Progress, and (3) Bounded Waiting.</p>
+          <p><strong>2. Semaphores (Notes P.36):</strong> An integer variable accessed only via two standard atomic operations: <code>wait()</code> (or P / decrement) and <code>signal()</code> (or V / increment).</p>
+          <p><strong>3. Counting vs Binary Semaphores:</strong> A Binary Semaphore has value 0 or 1 (acts as a mutex lock). A Counting Semaphore can range over an unrestricted integer domain to control access to a resource with a finite number of instances.</p>
+          <p><strong>4. Bounded Buffer Mechanism:</strong> Producer generates data into a buffer of size N; consumer removes data. Three semaphores manage state: <code>mutex = 1</code>, <code>empty = N</code>, and <code>full = 0</code>.</p>
+        `,
+        diagram: `<div class="font-mono text-xs leading-5 bg-white p-4 rounded border border-gray-200 overflow-x-auto">
+PRODUCER                          SHARED BUFFER [Size = N]             CONSUMER
++--------------------+            +---+---+---+---+---+---+            +--------------------+
+| 1. wait(empty)     |            | 0 | 1 | 2 | 3 | 4 | 5 |            | 1. wait(full)      |
+| 2. wait(mutex)     | ---------> |[D]|[D]|   |   |   |   | ---------> | 2. wait(mutex)     |
+|    buffer[in]=item |            +---+---+---+---+---+---+            |    item=buffer[out]|
+| 3. signal(mutex)   |            mutex: 1  empty: 4  full: 2          | 3. signal(mutex)   |
+| 4. signal(full)    |                                                 | 4. signal(empty)   |
++--------------------+                                                 +--------------------+
+        </div>`,
+        code: `// Full 10-Mark Model Answer (Notes P.38):
+semaphore mutex = 1;   // Binary semaphore for critical section access
+semaphore empty = N;   // Counting semaphore: vacant buffer slots
+semaphore full  = 0;   // Counting semaphore: occupied buffer slots
+
+// PRODUCER PROCESS
+do {
+    // produce an item in next_produced
+    wait(empty);    // Decrement empty slot count; blocks if empty == 0
+    wait(mutex);    // Acquire mutual exclusion lock
+
+    buffer[in] = next_produced;
+    in = (in + 1) % BUFFER_SIZE;
+
+    signal(mutex);  // Release mutual exclusion lock
+    signal(full);   // Increment full slot count; wakes up consumer
+} while (true);
+
+// CONSUMER PROCESS
+do {
+    wait(full);     // Decrement full slot count; blocks if buffer empty
+    wait(mutex);    // Acquire mutual exclusion lock
+
+    next_consumed = buffer[out];
+    out = (out + 1) % BUFFER_SIZE;
+
+    signal(mutex);  // Release mutual exclusion lock
+    signal(empty);  // Increment empty slot count; wakes up producer
+    
+    // consume the item in next_consumed
+} while (true);`,
+        trap: `
+          <p><strong>• Trap 1: Deadlock Order Swap:</strong> Writing <code>wait(mutex)</code> before <code>wait(empty)</code>. If the buffer is full (empty=0), producer locks mutex and blocks on empty. The consumer now cannot acquire mutex to empty a slot, causing permanent deadlock.</p>
+          <p><strong>• Trap 2: Busy Waiting (Spinlocks):</strong> Using while loops to check flags on a uniprocessor system wastes CPU cycles that could be used by the process holding the lock.</p>
+          <p><strong>• Trap 3: Initializing empty to 0:</strong> Empty represents vacant slots, so it MUST start at N, while full starts at 0.</p>
+        `,
+        mcqs: [
+          {
+            q: "In the Producer-Consumer problem with buffer capacity N, what are the initial values of mutex, empty, and full?",
+            opts: ["mutex = 0, empty = 0, full = N", "mutex = 1, empty = N, full = 0", "mutex = 1, empty = 0, full = N", "mutex = N, empty = 1, full = 0"],
+            correct: 1,
+            exp: "Sri Indu Notes P.38: mutex is a binary semaphore initialized to 1, empty is initialized to N (all slots vacant), and full is initialized to 0."
+          },
+          {
+            q: "What catastrophic failure occurs if the Producer code swaps the wait order to: wait(mutex) followed by wait(empty)?",
+            opts: ["Data corruption in buffer[in]", "Permanent Deadlock if the buffer is full", "Starvation of only the producer", "System resets due to stack overflow"],
+            correct: 1,
+            exp: "If buffer is full, producer acquires mutex, then sleeps waiting for empty. The consumer cannot acquire mutex to consume items, creating a permanent deadlock."
+          },
+          {
+            q: "Which of the following is NOT one of the three compulsory requirements for a valid critical section solution?",
+            opts: ["Mutual Exclusion", "Progress", "Strict Priority Preemption", "Bounded Waiting"],
+            correct: 2,
+            exp: "Sri Indu Notes P.31: The 3 formal requirements are Mutual Exclusion, Progress, and Bounded Waiting. 'Strict Priority Preemption' is not a requirement."
+          }
+        ]
+      },
+
+      'deadlocks': {
+        key: 'deadlocks',
+        module: 'Unit 3 • Deadlocks',
+        citation: 'Lectures 25-28 (Pages 43-52 in Sri Indu Notes)',
+        marks: '10 Marks Compulsory',
+        title: "Deadlocks (Banker's Algorithm & Safe State Verification)",
+        subtitle: 'Need matrix calculation and safety sequence verification algorithm.',
+        concept: `
+          <p><strong>1. Coffman's 4 Necessary Conditions (Notes P.43):</strong> Deadlock can arise if and only if four conditions hold simultaneously: (1) Mutual Exclusion, (2) Hold and Wait, (3) No Preemption, and (4) Circular Wait.</p>
+          <p><strong>2. Deadlock Avoidance vs Prevention:</strong> Prevention eliminates one of the 4 conditions. Avoidance requires the OS to be given <em>a priori</em> information about maximum resource requests, ensuring the system stays in a <em>Safe State</em>.</p>
+          <p><strong>3. Safe State Definition:</strong> A state is safe if there exists a sequence &lt;P1, P2, ..., Pn&gt; such that for each Pi, the resources that Pi can still request can be satisfied by currently available resources plus resources held by all preceding Pj.</p>
+          <p><strong>4. Banker's Algorithm Data Structures:</strong> Available (vector length m), Max (n x m matrix), Allocation (n x m matrix), and Need (n x m matrix, where <code>Need[i][j] = Max[i][j] - Allocation[i][j]</code>).</p>
+        `,
+        diagram: `<div class="font-mono text-xs leading-5 bg-white p-4 rounded border border-gray-200 overflow-x-auto">
+Banker's Algorithm State Space:
+Available Vector: [A: 3, B: 3, C: 2]
+
+Process    Allocation       Max           Need = Max - Allocation
+  P0        [0, 1, 0]    [7, 5, 3]               [7, 4, 3]   (Need <= Avail? NO: 7 > 3)
+  P1        [2, 0, 0]    [3, 2, 2]               [1, 2, 2]   (Need <= Avail? YES: runs!)
+  P2        [3, 0, 2]    [9, 0, 2]               [6, 0, 0]
+  P3        [2, 1, 1]    [2, 2, 2]               [0, 1, 1]
+  P4        [0, 0, 2]    [4, 3, 3]               [4, 3, 1]
+
+Execution sequence: P1 runs -> finishes -> releases [2, 0, 0] -> New Available = [5, 3, 2]
+        </div>`,
+        code: `// Complete 10-Mark Solved Exam Numerical (Notes P.48):
+Step 1: Compute Need Matrix:
+P0: [7-0, 5-1, 3-0] = [7, 4, 3]
+P1: [3-2, 2-0, 2-0] = [1, 2, 2]
+P2: [9-3, 0-0, 2-2] = [6, 0, 0]
+P3: [2-2, 2-1, 2-1] = [0, 1, 1]
+P4: [4-0, 3-0, 3-2] = [4, 3, 1]
+
+Step 2: Safety Check Trace:
+Initial Work = Available = [3, 3, 2]
+• Check P1: Need [1, 2, 2] <= Work [3, 3, 2] -> TRUE
+  Work = [3, 3, 2] + Allocation [2, 0, 0] = [5, 3, 2], Finish[P1] = true
+• Check P3: Need [0, 1, 1] <= Work [5, 3, 2] -> TRUE
+  Work = [5, 3, 2] + Allocation [2, 1, 1] = [7, 4, 3], Finish[P3] = true
+• Check P4: Need [4, 3, 1] <= Work [7, 4, 3] -> TRUE
+  Work = [7, 4, 3] + Allocation [0, 0, 2] = [7, 4, 5], Finish[P4] = true
+• Check P0: Need [7, 4, 3] <= Work [7, 4, 5] -> TRUE
+  Work = [7, 4, 5] + Allocation [0, 1, 0] = [7, 5, 5], Finish[P0] = true
+• Check P2: Need [6, 0, 0] <= Work [7, 5, 5] -> TRUE
+  Work = [7, 5, 5] + Allocation [3, 0, 2] = [10, 5, 7], Finish[P2] = true
+
+Conclusion: System is in a SAFE STATE.
+Safe Sequence: < P1, P3, P4, P0, P2 > (Awarded 10/10 Marks)`,
+        trap: `
+          <p><strong>• Trap 1: Adding Max instead of Allocation:</strong> When process Pi finishes, Work = Work + Allocation[i]. Students mistakenly add Max[i], which completely corrupts available resource vectors.</p>
+          <p><strong>• Trap 2: Safe State vs Unsafe State:</strong> An unsafe state is NOT necessarily a deadlock; it is merely a state from which the OS cannot prevent processes from deadlocking if they all request their maximums.</p>
+          <p><strong>• Trap 3: Vector comparison:</strong> Need <= Work requires every component Need[i][j] <= Work[j]. If even one component exceeds Work, the process cannot run yet.</p>
+        `,
+        mcqs: [
+          {
+            q: "In Banker's algorithm, if Max[i] = [7, 5, 3] and Allocation[i] = [2, 1, 2], what is the Need[i] vector?",
+            opts: ["[9, 6, 5]", "[5, 4, 1]", "[7, 5, 3]", "[2, 1, 2]"],
+            correct: 1,
+            exp: "Sri Indu Notes P.48: Need[i] = Max[i] - Allocation[i] = [7-2, 5-1, 3-2] = [5, 4, 1]."
+          },
+          {
+            q: "When a process Pi successfully executes and terminates under Banker's Safety Algorithm, how is the Work vector updated?",
+            opts: ["Work = Work + Need[i]", "Work = Work + Max[i]", "Work = Work + Allocation[i]", "Work = Work - Allocation[i]"],
+            correct: 2,
+            exp: "When a process finishes, it releases whatever resources it was currently holding, so Work = Work + Allocation[i]."
+          },
+          {
+            q: "Which of the following statements about safe states is TRUE according to OS theory?",
+            opts: ["An unsafe state is guaranteed to be a deadlock immediately", "A safe state guarantees that a deadlock will never occur under any circumstances", "If a system is in a safe state, the OS can guarantee that all processes can finish without deadlocking", "Banker's algorithm works only on single-instance resource systems"],
+            correct: 2,
+            exp: "Sri Indu Notes P.47: A safe state means there exists at least one order (safe sequence) in which all processes can finish without deadlock."
+          }
+        ]
+      },
+
+      'memory-management': {
+        key: 'memory-management',
+        module: 'Unit 4 • Main Memory & Paging',
+        citation: 'Lectures 29-33 (Pages 53-64 in Sri Indu Notes)',
+        marks: '10 Marks Numerical',
+        title: 'Main Memory & Paging Hardware (TLB & Address Translation)',
+        subtitle: 'CPU logical (p,d) to physical (f,d) lookup diagram, page faults, and EMAT formula.',
+        concept: `
+          <p><strong>1. Logical vs Physical Address (Notes P.53):</strong> Logical address is generated by CPU (virtual address space). Physical address is seen by the memory unit (loaded into Memory Address Register MAR). Run-time mapping is handled by the Memory Management Unit (MMU).</p>
+          <p><strong>2. Paging Scheme (Notes P.59):</strong> Physical memory is partitioned into fixed-sized blocks called <em>frames</em>; logical memory into blocks of the same size called <em>pages</em>. This eliminates external fragmentation completely.</p>
+          <p><strong>3. Address Structure:</strong> A logical address consists of two parts: Page Number (<em>p</em>) and Page Offset (<em>d</em>). The page number indexes the page table to find the base frame address <em>f</em> in physical memory.</p>
+          <p><strong>4. Translation Lookaside Buffer (TLB):</strong> Since page tables reside in main memory, accessing memory requires 2 memory accesses. A TLB is a high-speed associative hardware cache. If hit, frame is retrieved in cache search time; if miss, page table is accessed in RAM.</p>
+        `,
+        diagram: `<div class="font-mono text-xs leading-5 bg-white p-4 rounded border border-gray-200 overflow-x-auto">
+CPU Logical Address: [ Page Number p | Offset d ]
+                            |               |
+              +-------------+               |
+              |                             |
+      [ TLB Hit? ] --YES--> [Frame f]       |
+              |                             |
+             NO                             |
+              v                             |
+      [ Page Table in RAM ]                |
+              |                             |
+              +-----------> [Frame f]       |
+                                  |         |
+                                  v         v
+Physical Address:           [ Frame f | Offset d ] -> Main Memory
+        </div>`,
+        code: `// Complete 10-Mark Solved Numerical (Notes P.62):
+Effective Memory Access Time (EMAT) Formula:
+Let h = TLB Hit Ratio (e.g., 85% = 0.85)
+Let m = TLB search time (e.g., 15 ns)
+Let M = Main Memory access time (e.g., 100 ns)
+
+Case 1: TLB Hit (probability h):
+Time = m (TLB search) + M (Data access in RAM) = m + M
+
+Case 2: TLB Miss (probability 1 - h):
+Time = m (TLB search) + M (Page table access in RAM) + M (Data access in RAM)
+     = m + 2 * M
+
+EMAT = h * (m + M) + (1 - h) * (m + 2 * M)
+
+Example Problem Calculation:
+Given: h = 0.85, m = 15 ns, M = 100 ns
+EMAT = 0.85 * (15 + 100) + 0.15 * (15 + 200)
+     = 0.85 * (115) + 0.15 * (215)
+     = 97.75 + 32.25
+     = 130.00 ns (Awarded 10/10 Marks)`,
+        trap: `
+          <p><strong>• Trap 1: The (2 * M) Miss Penalty:</strong> On a TLB miss, RAM is accessed TWICE: 1st access reads the Page Table entry; 2nd access reads the actual memory operand. Students forget the factor of 2.</p>
+          <p><strong>• Trap 2: Fragmentation type:</strong> Paging completely eliminates EXTERNAL fragmentation, but suffers from INTERNAL fragmentation in the last allocated page frame.</p>
+          <p><strong>• Trap 3: Offset invariance:</strong> The page offset <em>d</em> remains identical between logical and physical addresses; only page number <em>p</em> is converted to frame number <em>f</em>.</p>
+        `,
+        mcqs: [
+          {
+            q: "If TLB hit ratio is 80%, TLB search time is 20ns, and main memory access time is 100ns, what is the Effective Memory Access Time (EMAT)?",
+            opts: ["100 ns", "120 ns", "140 ns", "220 ns"],
+            correct: 2,
+            exp: "EMAT = 0.80 * (20 + 100) + 0.20 * (20 + 200) = 0.80 * 120 + 0.20 * 220 = 96 + 44 = 140 ns."
+          },
+          {
+            q: "What type of memory fragmentation is completely eliminated by adopting Paging hardware?",
+            opts: ["Internal Fragmentation", "External Fragmentation", "Segment Fragmentation", "Cache Fragmentation"],
+            correct: 1,
+            exp: "Sri Indu Notes P.59: Paging divides memory into fixed-sized blocks, which completely eliminates External Fragmentation."
+          },
+          {
+            q: "In 32-bit logical address architecture with 4 KB (2^12 bytes) page size, how many bits are allocated for Page Number (p) and Offset (d)?",
+            opts: ["p = 16 bits, d = 16 bits", "p = 20 bits, d = 12 bits", "p = 12 bits, d = 20 bits", "p = 10 bits, d = 22 bits"],
+            correct: 1,
+            exp: "Page size 4 KB = 2^12 bytes, so offset d = 12 bits. Total address is 32 bits, so page number p = 32 - 12 = 20 bits."
+          }
+        ]
+      },
+
+      'virtual-memory': {
+        key: 'virtual-memory',
+        module: 'Unit 4 • Virtual Memory & Page Replacement',
+        citation: 'Lectures 34-37 (Pages 65-76 in Sri Indu Notes)',
+        marks: '10 Marks Numerical',
+        title: 'Virtual Memory & Page Replacement (FIFO, LRU & Belady\'s Anomaly)',
+        subtitle: 'Demand paging fault routine, FIFO vs LRU reference string simulation, and frame anomaly.',
+        concept: `
+          <p><strong>1. Demand Paging (Notes P.65):</strong> Pages are loaded only when requested during program execution. If a page is referenced that is not currently in RAM, the hardware traps to the OS with a <em>Page Fault</em>.</p>
+          <p><strong>2. Page Fault Handling Steps (Notes P.66):</strong> (1) OS traps on invalid bit, (2) OS checks if address is valid in swap space, (3) Free frame is allocated, (4) Disk I/O reads page into frame, (5) Page table valid bit set, (6) Instruction restarted.</p>
+          <p><strong>3. First-In First-Out (FIFO) & Belady's Anomaly (Notes P.71):</strong> Replaces the oldest page brought into memory. Usually, more frames reduce page faults. However, in FIFO, increasing frames can paradoxically <em>increase</em> page faults (Belady's Anomaly).</p>
+          <p><strong>4. Least Recently Used (LRU) Algorithm (Notes P.73):</strong> Replaces the page that has not been used for the longest period of time. LRU is a stack algorithm and does NOT suffer from Belady's Anomaly.</p>
+        `,
+        diagram: `<div class="font-mono text-xs leading-5 bg-white p-4 rounded border border-gray-200 overflow-x-auto">
+Reference String: 7, 0, 1, 2, 0, 3, 0, 4, 2, 3 (3 Frames FIFO):
+Ref:    7   0   1   2   0   3   0   4   2   3
+Frame 1: 7   7   7   2   2   2   2   4   4   4
+Frame 2: -   0   0   0   0   3   3   3   2   2
+Frame 3: -   -   1   1   1   1   0   0   0   3
+Fault:   F   F   F   F   H   F   F   F   F   F  (Total 9 Faults)
+
+Under LRU with 3 Frames:
+Ref:    7   0   1   2   0   3   0   4   2   3
+Fault:   F   F   F   F   H   F   H   F   F   F  (Total 8 Faults)
+        </div>`,
+        code: `// Complete 10-Mark Solved Numerical (Notes P.72):
+Given Reference String: 1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5
+
+Test for Belady's Anomaly under FIFO:
+Case A: With 3 Frames
+Frames:
+1 -> [1, -, -] (Fault 1)
+2 -> [1, 2, -] (Fault 2)
+3 -> [1, 2, 3] (Fault 3)
+4 -> [4, 2, 3] (Fault 4)
+1 -> [4, 1, 3] (Fault 5)
+2 -> [4, 1, 2] (Fault 6)
+5 -> [5, 1, 2] (Fault 7)
+3 -> [5, 3, 2] (Fault 8)
+4 -> [5, 3, 4] (Fault 9)
+Total Page Faults with 3 Frames = 9
+
+Case B: With 4 Frames
+Frames:
+1 -> [1, -, -, -] (F1)
+2 -> [1, 2, -, -] (F2)
+3 -> [1, 2, 3, -] (F3)
+4 -> [1, 2, 3, 4] (F4)
+1 -> Hit
+2 -> Hit
+5 -> [5, 2, 3, 4] (F5)
+1 -> [5, 1, 3, 4] (F6)
+2 -> [5, 1, 2, 4] (F7)
+3 -> [5, 1, 2, 3] (F8)
+4 -> [4, 1, 2, 3] (F9)
+5 -> [4, 5, 2, 3] (F10)
+Total Page Faults with 4 Frames = 10 (Increased from 9 to 10!)
+
+Conclusion: Belady's Anomaly verified for FIFO algorithm. (10/10 Marks)`,
+        trap: `
+          <p><strong>• Trap 1: Belady's Anomaly rule:</strong> Belady's anomaly occurs in FIFO, NOT in LRU or Optimal. LRU is a stack algorithm where frames for n is a strict subset of frames for n+1.</p>
+          <p><strong>• Trap 2: Optimal Replacement impossibility:</strong> Optimal replacement replaces the page that will not be used for longest time in the future. It requires future knowledge and is used only as a benchmark.</p>
+          <p><strong>• Trap 3: Thrashing definition:</strong> If a process does not have enough frames, it spends more time paging than executing. CPU utilization plunges to near zero.</p>
+        `,
+        mcqs: [
+          {
+            q: "What is Belady's Anomaly in operating systems page replacement?",
+            opts: ["Page fault rate decreases as frame count decreases", "Increasing the number of allocated frames increases the total number of page faults", "LRU and FIFO produce identical page faults", "Thrashing caused by low CPU clock speed"],
+            correct: 1,
+            exp: "Sri Indu Notes P.71: Belady's Anomaly is the counter-intuitive phenomenon where increasing the number of page frames causes more page faults in FIFO."
+          },
+          {
+            q: "Why is the Optimal Page Replacement algorithm impossible to implement in a real general-purpose operating system?",
+            opts: ["It requires infinite physical RAM frames", "It requires advance knowledge of future memory reference strings", "It causes permanent deadlock in kernel space", "It is only compatible with magnetic tape drives"],
+            correct: 1,
+            exp: "Sri Indu Notes P.73: Optimal algorithm requires knowing future page requests, which the OS cannot predict ahead of time."
+          },
+          {
+            q: "When a process spends more time swapping pages in and out of disk than executing instructions, what state has occurred?",
+            opts: ["Starvation", "Thrashing", "Deadlock", "Internal Fragmentation"],
+            correct: 1,
+            exp: "Sri Indu Notes P.76: Thrashing occurs when high paging activity causes CPU utilization to drop drastically because the system is constantly servicing page faults."
+          }
+        ]
+      }
+    };
+
+    // The Overall Exam Mock Assessment (5 questions, 1 from each topic)
+    const overallMockExam = [
+      {
+        topicKey: 'cpu-scheduling',
+        topicTitle: 'Topic 1: CPU Scheduling',
+        q: "In Shortest Remaining Time First (SRTF), if P1 (rem: 5ms) is running and P2 (burst: 3ms) arrives at t=2, what action does the CPU scheduler take?",
+        opts: ["P1 runs to completion", "P1 is immediately preempted and P2 runs", "P1 and P2 run concurrently in Round Robin", "P2 is killed with an arrival error"],
+        correct: 1,
+        exp: "SRTF is strictly preemptive. 3ms < 5ms, so P1 is immediately preempted to the Ready Queue."
+      },
+      {
+        topicKey: 'synchronization',
+        topicTitle: 'Topic 2: Synchronization',
+        q: "In the Producer-Consumer problem, what is the initial value of counting semaphore 'empty' for a buffer with capacity N?",
+        opts: ["0", "1", "N", "-1"],
+        correct: 2,
+        exp: "Initial empty buffer has all N slots vacant, so semaphore empty is initialized to N."
+      },
+      {
+        topicKey: 'deadlocks',
+        topicTitle: 'Topic 3: Deadlocks',
+        q: "In Banker's Algorithm, if Max[i] = [7, 5, 3] and Allocation[i] = [2, 1, 2], what is the Need[i] vector?",
+        opts: ["[9, 6, 5]", "[5, 4, 1]", "[7, 5, 3]", "[2, 1, 2]"],
+        correct: 1,
+        exp: "Need = Max - Allocation = [7-2, 5-1, 3-2] = [5, 4, 1]."
+      },
+      {
+        topicKey: 'memory-management',
+        topicTitle: 'Topic 4: Paging & Memory',
+        q: "With TLB hit ratio 80%, TLB search time 20ns, and memory access 100ns, what is the Effective Memory Access Time (EMAT)?",
+        opts: ["120 ns", "140 ns", "200 ns", "100 ns"],
+        correct: 1,
+        exp: "EMAT = 0.8 * (20 + 100) + 0.2 * (20 + 200) = 96 + 44 = 140 ns."
+      },
+      {
+        topicKey: 'virtual-memory',
+        topicTitle: 'Topic 5: Virtual Memory',
+        q: "Which page replacement algorithm can paradoxically experience MORE page faults when given MORE memory frames (Belady's Anomaly)?",
+        opts: ["Least Recently Used (LRU)", "First-In First-Out (FIFO)", "Optimal Page Replacement", "Stack Replacement"],
+        correct: 1,
+        exp: "FIFO suffers from Belady's Anomaly. Stack algorithms like LRU and Optimal do not."
+      }
+    ];
+
+    // =========================================================================
+    // UI NAVIGATION & INTERACTION FUNCTIONS
+    // =========================================================================
+
+    function openReader(topicKey) {
+      currentTopicKey = topicKey;
+      const data = topicsData[topicKey];
+      if (!data) return;
+
+      document.getElementById('reader-citation').innerText = data.citation;
+      document.getElementById('reader-module').innerText = data.module;
+      document.getElementById('reader-marks-tag').innerText = data.marks;
+      document.getElementById('reader-title').innerText = data.title;
+      document.getElementById('reader-subtitle').innerText = data.subtitle;
+      document.getElementById('reader-concept-box').innerHTML = data.concept;
+      document.getElementById('reader-diagram-box').innerHTML = data.diagram;
+      document.getElementById('reader-code-content').innerText = data.code;
+      document.getElementById('reader-trap-box').innerHTML = data.trap;
+
+      renderTopicMCQs(topicKey, data.mcqs);
+
+      document.getElementById('view-hybrid-main').classList.add('hidden');
+      document.getElementById('view-overall-assessment').classList.add('hidden');
+      document.getElementById('view-clean-reader').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    function renderTopicMCQs(topicKey, mcqList) {
+      const container = document.getElementById('topic-mcq-container');
+      container.innerHTML = '';
+      
+      if (!topicQuizScores[topicKey]) {
+        topicQuizScores[topicKey] = {};
+      }
+
+      mcqList.forEach((item, qIdx) => {
+        const qCard = document.createElement('div');
+        qCard.className = 'bg-white border-2 border-indigo-100 rounded-xl p-5 shadow-sm';
+        
+        const header = document.createElement('div');
+        header.className = 'flex items-center justify-between mb-3';
+        header.innerHTML = `
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Question ${qIdx + 1} of 3</span>
+          <span id="${topicKey}-q${qIdx}-status" class="text-xs font-semibold text-gray-400">Unanswered</span>
+        `;
+        qCard.appendChild(header);
+
+        const qText = document.createElement('p');
+        qText.className = 'text-sm font-semibold text-gray-900 mb-3.5';
+        qText.innerText = item.q;
+        qCard.appendChild(qText);
+
+        const optsDiv = document.createElement('div');
+        optsDiv.className = 'space-y-2 mb-3.5';
+        
+        item.opts.forEach((optText, oIdx) => {
+          const btn = document.createElement('button');
+          btn.id = `${topicKey}-q${qIdx}-opt${oIdx}`;
+          btn.className = 'w-full text-left p-3 rounded-lg border border-gray-200 hover:border-indigo-400 bg-gray-50 hover:bg-indigo-50/50 transition flex items-center space-x-3 text-xs';
+          btn.innerHTML = `
+            <span class="w-6 h-6 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-gray-700 shrink-0">
+              ${String.fromCharCode(65 + oIdx)}
+            </span>
+            <span class="text-gray-800">${optText}</span>
+          `;
+          btn.onclick = () => answerTopicMCQ(topicKey, qIdx, oIdx, item.correct, item.exp);
+          optsDiv.appendChild(btn);
+        });
+        qCard.appendChild(optsDiv);
+
+        const feedback = document.createElement('div');
+        feedback.id = `${topicKey}-q${qIdx}-feedback`;
+        feedback.className = 'hidden p-3.5 rounded-lg text-xs leading-relaxed';
+        qCard.appendChild(feedback);
+
+        container.appendChild(qCard);
+      });
+
+      updateTopicQuizScoreBadge(topicKey);
+    }
+
+    function answerTopicMCQ(topicKey, qIdx, selectedIdx, correctIdx, explanation) {
+      const isCorrect = (selectedIdx === correctIdx);
+      topicQuizScores[topicKey][qIdx] = isCorrect;
+
+      // Color options
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`${topicKey}-q${qIdx}-opt${i}`);
+        if (!btn) continue;
+        btn.disabled = true;
+        if (i === correctIdx) {
+          btn.className = 'w-full text-left p-3 rounded-lg border-2 border-emerald-500 bg-emerald-50 text-emerald-900 transition flex items-center space-x-3 text-xs font-semibold';
+        } else if (i === selectedIdx && !isCorrect) {
+          btn.className = 'w-full text-left p-3 rounded-lg border-2 border-rose-400 bg-rose-50 text-rose-900 transition flex items-center space-x-3 text-xs';
+        } else {
+          btn.className = 'w-full text-left p-3 rounded-lg border border-gray-200 bg-gray-50 opacity-40 text-xs flex items-center space-x-3';
+        }
+      }
+
+      // Feedback
+      const statusBadge = document.getElementById(`${topicKey}-q${qIdx}-status`);
+      const feedbackBox = document.getElementById(`${topicKey}-q${qIdx}-feedback`);
+      feedbackBox.classList.remove('hidden');
+
+      if (isCorrect) {
+        statusBadge.innerHTML = '<span class="text-emerald-600 font-bold"><i class="fa-solid fa-check"></i> Correct</span>';
+        feedbackBox.className = 'p-3.5 rounded-lg text-xs leading-relaxed bg-emerald-100 text-emerald-900 border border-emerald-300';
+        feedbackBox.innerHTML = `<b><i class="fa-solid fa-circle-check text-emerald-600 mr-1.5"></i> Correct!</b><br>${explanation}`;
+      } else {
+        statusBadge.innerHTML = '<span class="text-rose-600 font-bold"><i class="fa-solid fa-xmark"></i> Incorrect</span>';
+        feedbackBox.className = 'p-3.5 rounded-lg text-xs leading-relaxed bg-rose-100 text-rose-900 border border-rose-300';
+        feedbackBox.innerHTML = `<b><i class="fa-solid fa-triangle-exclamation text-rose-600 mr-1.5"></i> University Scheme Rule:</b><br>${explanation}`;
+        // Mark as needing review
+        weakTopicsForReview.add(topicKey);
+      }
+
+      updateTopicQuizScoreBadge(topicKey);
+    }
+
+    function updateTopicQuizScoreBadge(topicKey) {
+      const scores = topicQuizScores[topicKey] || {};
+      const correctCount = Object.values(scores).filter(Boolean).length;
+      document.getElementById('topic-quiz-score-badge').innerText = `Score: ${correctCount} / 3`;
+    }
+
+    function finishTopicReading() {
+      if (currentTopicKey) {
+        completedTopics.add(currentTopicKey);
+        
+        // Update badge on main dashboard
+        const badgeMap = {
+          'cpu-scheduling': 'badge-cpu',
+          'synchronization': 'badge-sync',
+          'deadlocks': 'badge-deadlocks',
+          'memory-management': 'badge-paging',
+          'virtual-memory': 'badge-vm'
+        };
+        const badgeId = badgeMap[currentTopicKey];
+        if (badgeId && document.getElementById(badgeId)) {
+          document.getElementById(badgeId).innerHTML = '<span class="text-emerald-600 font-bold"><i class="fa-solid fa-check"></i> Completed</span>';
+        }
+
+        // Live closed-loop pace recalibration:
+        const count = completedTopics.size;
+        const pct = Math.min(100, Math.round((count / 5) * 100));
+        document.getElementById('metric-progress-pct').innerText = `${pct}% (${count}/5)`;
+        document.getElementById('metric-progress-bar').style.width = `${pct}%`;
+
+        // Update velocity
+        const newVelocity = (8.53 + (count * 0.45)).toFixed(2);
+        document.getElementById('metric-velocity').innerHTML = `${newVelocity} <span class="text-xs text-gray-500 font-normal">Marks/h</span>`;
+        document.getElementById('metric-velocity-sub').innerText = `+${count * 6}% faster than baseline`;
+
+        // Call backend API in background if running
+        fetch(`http://localhost:8080/api/topics/${currentTopicKey}/mastery-check`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ score: 10, time_spent_minutes: 25 })
+        }).catch(e => console.log('Offline/Local mode'));
+      }
+
+      backToMain();
+    }
+
+    function backToMain() {
+      document.getElementById('view-clean-reader').classList.add('hidden');
+      document.getElementById('view-overall-assessment').classList.add('hidden');
+      document.getElementById('view-hybrid-main').classList.remove('hidden');
+      renderReviewRecommendationsBanner();
+      window.scrollTo(0, 0);
+    }
+
+    // =========================================================================
+    // OVERALL FINAL EXAM ASSESSMENT (5 TOPICS CROSS-CHECK)
+    // =========================================================================
+
+    function openOverallAssessment() {
+      document.getElementById('view-hybrid-main').classList.add('hidden');
+      document.getElementById('view-clean-reader').classList.add('hidden');
+      document.getElementById('view-overall-assessment').classList.remove('hidden');
+      window.scrollTo(0, 0);
+
+      renderOverallQuestions();
+    }
+
+    function renderOverallQuestions() {
+      const container = document.getElementById('overall-questions-container');
+      container.innerHTML = '';
+
+      overallMockExam.forEach((item, idx) => {
+        const card = document.createElement('div');
+        card.className = 'bg-white border-2 border-purple-100 rounded-xl p-5 shadow-sm';
+        
+        card.innerHTML = `
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-purple-700 uppercase tracking-wider">${item.topicTitle}</span>
+            <span id="overall-status-${idx}" class="text-xs font-medium text-gray-400">Unanswered</span>
+          </div>
+          <h3 class="text-sm font-bold text-gray-900 mb-3">${idx + 1}. ${item.q}</h3>
+          <div class="space-y-2 mb-3" id="overall-opts-${idx}"></div>
+          <div id="overall-feedback-${idx}" class="hidden p-3 rounded-lg text-xs leading-relaxed"></div>
+        `;
+        container.appendChild(card);
+
+        const optsBox = card.querySelector(`#overall-opts-${idx}`);
+        item.opts.forEach((optText, oIdx) => {
+          const btn = document.createElement('button');
+          btn.id = `overall-q${idx}-opt${oIdx}`;
+          btn.className = 'w-full text-left p-3 rounded-lg border border-gray-200 hover:border-purple-400 bg-gray-50 transition flex items-center space-x-3 text-xs';
+          btn.innerHTML = `
+            <span class="w-6 h-6 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-gray-700 shrink-0">
+              ${String.fromCharCode(65 + oIdx)}
+            </span>
+            <span class="text-gray-800">${optText}</span>
+          `;
+          btn.onclick = () => selectOverallOption(idx, oIdx);
+          optsBox.appendChild(btn);
+        });
+      });
+    }
+
+    function selectOverallOption(qIdx, oIdx) {
+      overallAnswers[qIdx] = oIdx;
+
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`overall-q${qIdx}-opt${i}`);
+        if (!btn) continue;
+        if (i === oIdx) {
+          btn.className = 'w-full text-left p-3 rounded-lg border-2 border-purple-600 bg-purple-50 text-purple-900 transition flex items-center space-x-3 text-xs font-semibold';
+        } else {
+          btn.className = 'w-full text-left p-3 rounded-lg border border-gray-200 bg-gray-50 text-xs flex items-center space-x-3';
+        }
+      }
+
+      document.getElementById(`overall-status-${qIdx}`).innerHTML = '<span class="text-purple-600 font-bold">Selected</span>';
+    }
+
+    function submitOverallAssessment() {
+      let score = 0;
+      weakTopicsForReview.clear();
+
+      overallMockExam.forEach((item, idx) => {
+        const selected = overallAnswers[idx];
+        const isCorrect = (selected === item.correct);
+        if (isCorrect) {
+          score++;
+        } else {
+          weakTopicsForReview.add(item.topicKey);
+        }
+
+        // Color buttons
+        for (let i = 0; i < 4; i++) {
+          const btn = document.getElementById(`overall-q${idx}-opt${i}`);
+          if (!btn) continue;
+          btn.disabled = true;
+          if (i === item.correct) {
+            btn.className = 'w-full text-left p-3 rounded-lg border-2 border-emerald-500 bg-emerald-50 text-emerald-900 text-xs font-bold flex items-center space-x-3';
+          } else if (i === selected && !isCorrect) {
+            btn.className = 'w-full text-left p-3 rounded-lg border-2 border-rose-400 bg-rose-50 text-rose-900 text-xs flex items-center space-x-3';
+          }
+        }
+
+        // Feedback
+        const feedback = document.getElementById(`overall-feedback-${idx}`);
+        feedback.classList.remove('hidden');
+        if (isCorrect) {
+          feedback.className = 'p-3 rounded-lg text-xs leading-relaxed bg-emerald-100 text-emerald-900';
+          feedback.innerHTML = `<b>Correct!</b> ${item.exp}`;
+        } else {
+          feedback.className = 'p-3 rounded-lg text-xs leading-relaxed bg-rose-100 text-rose-900';
+          feedback.innerHTML = `<b>Needs Review:</b> ${item.exp}`;
+        }
+      });
+
+      // Display result box
+      const resultBox = document.getElementById('overall-result-box');
+      resultBox.classList.remove('hidden');
+      document.getElementById('overall-result-title').innerText = `Overall Score: ${score} / 5 (${Math.round((score/5)*100)}%)`;
+      
+      if (score === 5) {
+        document.getElementById('overall-result-desc').innerText = "Outstanding! You have mastered all 5 core midterm topics with zero blind spots.";
+      } else {
+        document.getElementById('overall-result-desc').innerText = `You answered ${score}/5 correctly. We have marked ${weakTopicsForReview.size} topic(s) as weak areas for you to re-read before the exam.`;
+      }
+
+      document.getElementById('btn-submit-overall').disabled = true;
+      document.getElementById('btn-submit-overall').classList.add('opacity-50');
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function applyReviewRecommendations() {
+      backToMain();
+    }
+
+    function renderReviewRecommendationsBanner() {
+      const banner = document.getElementById('review-recommendations-banner');
+      if (!banner) return;
+
+      if (weakTopicsForReview.size === 0) {
+        banner.classList.add('hidden');
+        return;
+      }
+
+      banner.classList.remove('hidden');
+      document.getElementById('review-count-badge').innerText = `${weakTopicsForReview.size} Topic(s) Need Review`;
+      
+      const chipsBox = document.getElementById('review-topics-chips');
+      chipsBox.innerHTML = '';
+
+      weakTopicsForReview.forEach(topicKey => {
+        const data = topicsData[topicKey];
+        if (!data) return;
+        const chip = document.createElement('button');
+        chip.onclick = () => openReader(topicKey);
+        chip.className = 'px-3 py-1.5 bg-white hover:bg-amber-100 border border-amber-300 text-amber-950 font-bold text-xs rounded-lg shadow-sm transition flex items-center space-x-1.5';
+        chip.innerHTML = `
+          <span>🔄 Re-read: <b>${data.title}</b></span>
+          <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
+        `;
+        chipsBox.appendChild(chip);
+      });
+    }
+
+    // Triage prompt presets
+    function setScenario(scen) {
+      if (scen === 1) {
+        document.getElementById('emergency-input').value = "I missed 3 weeks due to Malhar Fest organizing, exam is Friday, I only have 6 hours left. How do I pass?";
+      } else if (scen === 2) {
+        document.getElementById('emergency-input').value = "I was on medical leave with dengue. I need safe passing on Deadlocks and Paging by Friday.";
+      } else if (scen === 3) {
+        document.getElementById('emergency-input').value = "My exam is in 24 hours. I understand CPU scheduling but need rapid 10-mark formulas for Banker's and Semaphores.";
+      }
+      triggerADKWorkflow();
+    }
+
+    function triggerADKWorkflow() {
+      const btn = document.getElementById('btn-recalibrate');
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Analyzing...';
+      
+      const trace = document.getElementById('adk-trace-box');
+      trace.classList.remove('hidden');
+      
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400 mr-2"></i> Recalibrated!';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Run Triage Engine';
+        }, 1500);
+      }, 700);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,545 @@
+Skip to content
+Using Gmail with screen readers
+1 of 1,841
+ACTION REQUIRED: Your Live Build Problem Statement & Room Allocation | BPF 2026
+InboxSummarise this emailHack2skill <jitesh.koul@hack2skill.com>
+10:37 (5 minutes ago)
+to meBuilders Pitch Fest bannerDear puneeth kamatham,The live build challenge for Builders’ Pitch Fest 2026 will start soon at 11:00 AM!Below are your assigned domain problem statement, build room location, and designated mentor(s). Please read carefully and head to your assigned workstation immediately to begin building.YOUR LIVE BUILD ALLOCATION
+Startup Name: puneeth kamathamAssigned Build Room: Academic Block Room T03 (Academic Block 1, 3rd Floor)YOUR PROBLEM STATEMENT
+Problem Statement Title: EdTech AI Problems,Problem Statement Details / Brief: Build an AI-enabled solution that helps students make better academic decisions or improve learning outcomes or manage their timeCheck out the whole document here: https://docs.google.com/document/d/1C5qN4M5R9_FqeYk1BNhAEE8ZpFqBKRzK/edit(You can also access your problem statement and resource files directly on your Hack2skill Dashboard).ChallengesSubmission DashboardIMMEDIATE NEXT STEPS & BUILD TIMELINE
+Move to Room T03: Head to Academic Block 1 (3rd Floor) and locate Room T03.Connect with Your Mentor: Meet your mentor in your room for Checkpoint 1 (architecture and solution alignment).Key Timelines Today:10:45 AM: Live Build Commences01:00 PM – 01:45 PM: Working Lunch Break02:00 PM – 05:30 PM: Build Continues & Checkpoint 2 (Prototype Testing)06:00 PM SHARP: Code Freeze & Final Submission Cutoff on the Hack2skill portalON-GROUND HELP DESK
+If you have any difficulty locating your room or accessing your problem statement, reach out to the on-ground team immediately:All the best, and happy building!Warm regards,
+Team BITSoM Vertexpuneeth kamatham
+10:43 (0 minutes ago)
+to Hruthik++for this problem statement - help me understand it better , grounded to indian education, what problem i can solve in this timeline and ground realities and to win
+
+Thought for 15s
+
+The problem statement is deliberately broad so you can pick a sharp, high-impact slice. It asks for an AI-enabled solution that helps students:Make better academic decisions (stream/subject/college/career choices, prioritization), or
+Improve learning outcomes (understanding, retention, performance), or
+Manage their time better.
+
+You do not need to solve everything. Judges care about a clear, painful Indian problem, a working prototype they can try, Indian context, and realistic path to impact.Ground realities of Indian education (what actually hurts students)High-stakes, high-pressure system: Boards, JEE, NEET, CUET, state exams create constant ranking anxiety. Many students take drop years. Parental and societal pressure is intense.
+Career/stream confusion is massive: Most students (especially Class 10–12 and first-year college) get almost no structured counseling. Choices are often driven by “what’s safe,” peer pressure, or parent preference rather than aptitude + interest + realistic outcomes. Language medium (Hindi/regional → English) creates extra friction in college.
+Rote + volume problem: Syllabus is heavy. Students struggle to decide what to study when, how to revise, and how to balance multiple subjects under continuous assessment (NEP shift) + entrance prep.
+Time & burnout: Long coaching + school days, irregular sleep, family obligations, festivals, power/internet issues in many places. Self-regulation is weak for many; pure “study harder” advice fails.
+Access gaps: Good teachers and counselors are scarce outside metros. Smartphone + WhatsApp is common; full laptop + always-on internet is not universal.
+Mental load: Anxiety, fear of failure, and feeling “behind” are widespread.
+
+These are the levers that feel authentic to Indian students and will resonate with mentors/judges.What you can realistically build today (11 AM → 6 PM code freeze)You have roughly 6–7 hours of pure build time after Checkpoint 1. Prioritize a demoable core loop over a polished full product.Strong, winnable directions (pick one and go deep):AI Academic Decision / Career-Stream Advisor (highest “decision” fit)
+Input: Class, board (CBSE/State), current marks/%ile, interests, strengths/weaknesses, preferred language, family constraints (budget, location).
+Output: Ranked realistic options (PCM vs PCB vs Commerce vs Arts + specific career paths), required entrance exams, expected effort, alternative plans if rank is lower, simple next 30-day action plan.
+Why it wins: Extremely common pain, easy to show personalization, clear value (“this would have saved me a year”). Use an LLM with a structured prompt + a small knowledge base of common Indian paths (you can hardcode or RAG a few public PDFs/syllabus summaries). Add Hindi + English.
+Smart Time & Study Planner for Exam Season (time management + outcomes)
+Input: Upcoming exams (board + JEE/NEET chapters), current weak topics, available hours per day, energy pattern (morning/evening person).
+Output: Daily/weekly plan with prioritization (high-weight chapters first), spaced revision, short breaks that respect Indian realities (family time, power cuts), and adaptive re-planning if the student falls behind.
+Extra win: Simple progress tracker + “why this plan” explanations. Feels immediately useful.
+Personalized Learning Outcome Booster (focused tutor / doubt + concept tool)
+Example: “Explain this Class 12 Physics/Maths/Chemistry concept simply + generate 5 progressive practice questions + common Indian exam mistakes + quick revision notes in English + Hindi.”
+Or: Syllabus-aware revision prioritizer (“Given my remaining days and weak areas, what should I do today?”).
+Keep scope tight (one or two subjects) so the demo is strong.
+
+Avoid overly broad “full LMS” or anything needing heavy data collection, real-time multi-user backend, or complex computer vision today. Mentors will push for a working prototype they can interact with at Checkpoint 2.How to structure for a strong showing / chance to winProblem clarity first: In the first 15–20 minutes with your mentor, state: “Indian Class 11–12 / first-year students waste months on wrong streams or inefficient study because of zero personalized guidance and poor time prioritization. We solve X with AI.”
+Indian specificity: Support CBSE/common state board language, Hindi/English toggle, JEE/NEET/board weightage awareness, realistic constraints (coaching hours, family pressure). This differentiates you from generic ChatGPT wrappers.
+Demo flow (practice this):Student profile input (form or chat).
+AI generates plan/recommendation in <10–15 seconds.
+User can ask follow-ups (“What if I only have 4 hours/day?” or “Explain this chapter simply”).
+Show before/after or “why this is better than random YouTube/coaching advice.”
+
+Tech that ships fast: Gradio or Streamlit + Gemini/OpenAI API (or whatever is easiest on your machine). Structured JSON outputs from the LLM. Simple RAG if you have a few syllabus/career PDFs. No need for fancy auth or database for the live build.
+Judging angles that matter: Real pain + working AI core + Indian grounding + clear next steps (how it scales, data moat, B2C freemium or B2B schools/coaching). Show you understand ground realities (offline-ish mode ideas, low-bandwidth, parent view later).
+
+Recommended immediate plan for todayPick one sharp problem (I lean toward the Academic Decision Advisor or Exam-Season Study Planner — both map cleanly and are highly relatable).
+Write a one-sentence problem + one-sentence solution.
+Sketch the 3–4 screen/demo flow on paper.
+Build the core AI call first (prompt engineering is 50% of the win).
+Add a clean UI and 1–2 edge cases (e.g., low marks, Hindi input).
+Prepare a 60-second pitch + live demo for checkpoints and final.
+
+You have a very solvable, high-signal problem. Focus on clarity + working demo + Indian authenticity. That combination stands out in live builds.If you tell me which direction you’re leaning toward (decision / time / learning outcomes) and your tech comfort (Python, JS, specific APIs), I can give you a tighter architecture, sample prompts, or feature prioritization for the next few hours. Head to T03 and start building — you’ve got this. All the best!
+
+Explore NEP 2024 impact
+
+Investigate EdTech unicorns
+
+EdTech AI Track: DAY-1 Builders Pitch Fest Problem Brief
+YOUR GOAL
+By the end of the buildathon (5.30pm)
+Frame the problem
+Design a solution that is relevant, solves the problem and that you can build in the allocated time.
+Build and demonstrate a working prototype that shows how your solution solves the problem. 
+If any of the above are missing, points will be deducted. 
+PROBLEM CONTEXT
+A large Indian university has more than 500 students across multiple programs. The programs have flexible course choices (electives) that students can take to complete the program. 
+Students regularly struggle with questions such as:
+Which courses should I take (quality, scheduling, relevance, etc)? 
+How do I plan my learning for my courses? 
+Which faculty or university resources can help me? 
+What are the various opportunities I can tap into my university for my career (clubs, groups, extracurricular, conferences, etc., etc.?
+Am I on track academically? What should I do differently based on my performance? 
+Is what I am learning relevant for me to get a job? 
+Have I taken care of all necessary university logistics (pay, grades, courses, etc etc) ?
+Today, much of this support comes through faculty, placement teams, academic advisors, LMS portals, PDFs, emails, and peer groups. The experience is fragmented, reactive, and difficult to personalize at scale.
+The Challenge
+Build an AI-enabled solution that helps students make better academic decisions or improve learning outcomes or manage their time, or any use case above, while reducing the amount of repetitive support required from faculty or administrators.
+You are free to decide which student problem is most important to solve with AI among the areas above. Your solution does not need to address every issue.
+Pick one meaningful problem, frame it clearly, identify where AI can genuinely make a difference, and build the strongest working prototype you can within the available time.Rules (Pay Close Attention)
+Maximum team size: 2 participants per startup.
+Teams may define reasonable assumptions about the problem where information is missing, but those assumptions must be stated clearly during your final presentation. 
+Teams may narrow the problem to a specific user journey or use case if they believe that creates a stronger solution.
+No external human assistance during the challenge. No calls, messages, remote engineers, advisors, or outside team members.
+Internet access and AI tools such as ChatGPT, Claude, Gemini, Cursor, Copilot, etc. are allowed.
+Public code, framework, repository, model, API, or dataset may be used. Teams are responsible for ensuring they have the right to use any external code, data, APIs, or content they incorporate.
+Do not use real confidential, personal, or sensitive student data; use provided or synthetic data where appropriate.
+You may not use private or proprietary code that was developed by your team before the challenge. However, if that code authored by your team is already Publicly available code it may be used if disclosed
+The prototype must be substantially built during the challenge window.
+The final solution must include a working demo and one slide. The demo and slide will be presented to the judge at 5.30pm and the demo code will be uploaded to the provided link. 
+Your prototype must demonstrate a genuinely dynamic, AI-driven solution. Limited hardcoding is acceptable for setup, workflow, or supporting functions, but hardcoded responses or logic must not be used to artificially improve the apparent quality of the AI output or to simulate intelligence that the system does not actually possess.
+Changes made after the submission deadline will not be considered for judging.
+What We Want to See at 5.30pm. 
+You have 10mins (7mins to demonstrate and 3mins for q&a). 
+What problem you chose to solve and why - 1 SLIDE
+Demonstrate Your working prototype 
+How it solves the problem 
+How AI is being used 
+Key technical choices you made 
+What you would build next with more timeAgive me 5 types of problems i can solve i will select
+
+Here are 5 strong, focused problem types you can pick from. All fit the brief, are highly relevant to a large Indian university with flexible electives, can be narrowed to a clean user journey, and are realistic to prototype with real AI (LLM + simple UI) by 5:30 pm.1. Intelligent Course / Elective AdvisorProblem: Students waste time and make poor choices on electives because information is scattered across PDFs, LMS, faculty emails, and peer chats. They don’t know which courses are high-quality, fit their schedule, match career goals, or complement previous courses.AI opportunity: Student inputs program, current semester, past courses/grades, career interest, and constraints (timetable, workload). AI recommends 3–5 electives with reasons, schedule conflict check, difficulty estimate, and “why this helps your goals.”Why strong: Directly hits “better academic decisions” + reduces advisor load. Easy to demo with synthetic course catalog.2. Personalized Academic Progress + Intervention AdvisorProblem: Students don’t know if they are “on track.” Performance feedback is delayed or generic. They only realize problems after mid-sem or finals.AI opportunity: Student pastes or uploads current grades + course list. AI analyzes performance trends, flags risk areas, suggests concrete actions (which topics to revise, which faculty office hours to attend, whether to drop/add a course), and generates a simple recovery plan.Why strong: Clear “Am I on track?” pain. Shows dynamic AI reasoning. Reduces repetitive faculty counseling.3. AI Learning & Time Planner for CoursesProblem: Students struggle to plan study across multiple electives + core courses. They either under-prepare or burn out. No personalized weekly plan exists.AI opportunity: Student gives courses + remaining weeks + available hours per day + weak topics. AI generates a realistic weekly study plan, prioritizes high-impact topics, inserts revision slots, and can re-plan when the student falls behind.Why strong: Classic time-management + learning outcomes use case. Very demoable (input → plan → adjust).4. Career-Relevant Opportunity Matcher (beyond placements)Problem: Students miss clubs, research projects, conferences, hackathons, faculty projects, and skill-building opportunities because information is fragmented and not personalized to their courses/goals.AI opportunity: Student profile (courses taken, skills, career interest) → AI surfaces the most relevant university opportunities this month/semester with “why it matches you” and next action (how to apply/join).Why strong: Hits the “opportunities I can tap into” question. Differentiates from pure academic tools. Easy to seed with synthetic opportunity data.5. Unified Student Query Assistant (Logistics + Academic + Career)Problem: Students repeatedly ask the same questions about deadlines, grade rules, course drop/add process, faculty contacts, placement eligibility, etc. Support is reactive and fragmented.AI opportunity: Conversational AI that answers university-specific questions using a knowledge base (synthetic handbook + FAQs). It can also pull in the student’s context (“Given my current CGPA and courses, am I eligible for X?”) and guide next steps.Why strong: Directly reduces repetitive faculty/admin load. Feels like a practical “university co-pilot.” Good if you want a chat-first demo.Quick recommendation for winning today  Best balance of impact + buildability: #1 (Course/Elective Advisor) or #2 (Progress + Intervention Advisor)  
+Most “wow” demo potential: #1 or #3  
+Safest if you want pure conversation: #5
+
+Tell me which number (or combination) you want to go with, and I’ll help you:Sharpen the exact problem statement
+Define the user journey
+List the minimum viable features for a strong prototype
+Suggest data assumptions + technical approach that fits the time
+
+Pick one and we’ll lock it in.
+
+Explore RAG implementation details
+
+Investigate prompt engineering techniques
+
+Add specific tech stack recommendations
+
+let's check on 1 - 3 - give 10 kpi's and rank this 3 , give in a table and i want wow factor for each too - here we have 12 more teams competiting with the given problem statement
+
+Comparison of Options 1, 2 & 3
+(Context: 12 other teams competing on the same broad problem statement — differentiation and “wow” matter a lot)Ranking (Overall for today’s buildathon)Rank
+Option
+Overall Score
+Why this rank
+1
+1. Intelligent Course / Elective Advisor
+9.2 / 10
+Highest decision impact + strongest wow + easiest to make look intelligent + hardest for others to copy well
+2
+3. AI Learning & Time Planner
+8.1 / 10
+Very practical and demoable, good visual wow, slightly more common idea
+3
+2. Academic Progress + Intervention Advisor
+7.4 / 10
+Solid and useful, but harder to make “wow” in a short demo and feels more reactive
+
+Detailed TableAspect
+1. Intelligent Course / Elective Advisor
+2. Academic Progress + Intervention Advisor
+3. AI Learning & Time Planner
+Wow Factor
+Very High — Instant personalized ranked recommendations with reasons, schedule fit & career link feels magical
+Medium — “You’re at risk” + recovery plan is useful but less surprising
+High — Beautiful weekly calendar/plan that adapts live looks impressive
+Differentiation vs 12 teams
+Highest — Most teams will do generic chatbots or simple planners. Smart elective matching is rarer and more “advisor-like”
+Medium — Many will try progress tracking
+Medium-High — Time planners are common, but adaptive ones stand out
+Build Difficulty (today)
+Medium
+Medium-High (needs good grade interpretation)
+Medium
+Demo Strength
+Excellent (input profile → instant ranked list + explanations)
+Good (but needs sample grades to look real)
+Excellent (visual plan + re-plan)
+Faculty Load Reduction
+Very High (biggest repetitive question)
+High
+Medium
+Student Pain Intensity
+Extremely High
+High
+High
+
+10 KPIs for each (what success looks like)1. Intelligent Course / Elective AdvisorRecommendation relevance score (student rates 1-5)
+% of recommended electives that fit schedule with zero conflicts
+Time saved vs manual research (target: < 60 seconds vs 2–4 hours)
+Career-alignment score of recommendations
+% of students who accept at least 2 recommended electives
+Reduction in faculty/advisor queries about electives
+Diversity of recommendations (not always the “popular” courses)
+Explanation quality score (students understand “why”)
+Conversion from recommendation → actual registration
+NPS / “Would you use this every semester?”
+
+2. Academic Progress + Intervention AdvisorRisk detection accuracy (true positives for students who later underperform)
+% of at-risk students who follow at least one suggested action
+Improvement in predicted final grade after intervention
+Time-to-insight (seconds from grade input to advice)
+Faculty time saved on progress counseling
+Student self-awareness score (“I now understand where I stand”)
+Recovery plan completion rate
+Reduction in last-minute panic / backlog
+Precision of topic-level recommendations
+Student confidence score after using the tool
+
+3. AI Learning & Time PlannerPlan adherence rate (% of planned sessions completed)
+Reduction in last-minute cramming hours
+Student-reported stress reduction
+Average study efficiency (topics covered per hour)
+Plan re-generation speed when student falls behind
+Balance score (core vs elective vs revision time)
+% of students who say “this is better than my own plan”
+Weekly goal completion rate
+Time saved in planning itself
+Retention / daily active use during exam season
+
+Final Recommendation
+Go with Option 1 (Intelligent Course / Elective Advisor) if you want the highest chance to stand out among 12 teams.
+It has the strongest combination of real decision power + wow factor + faculty load reduction + demo clarity.Would you like me to lock Option 1 and immediately give you:Exact problem statement for the slide
+Synthetic course catalog (12–15 courses)
+Minimum feature list for a killer prototype
+Prompt strategy + Gradio/Streamlit structure
+
+Just say “Lock 1” or tell me if you prefer 3.
+
+Explain KPI calculation methods
+
+Explore UI design patterns
+
+add this to the comparision and give overall ranking - market - the medium to low end students to push forward
+idea - the students don't have problem of information , they are burned out to start where and which 20 % will yield the 80 % results 
+    - its the smart studying the students lack - in the mdium to low graded student category
+what we solve - the college provides this tool to everyone or this tool specifically enabled with current course syllabus - curricullam - dates, past results , exam dates , past exam question weightage , and many
+
+Updated Comparison including the new ideaNew Option Added4. Smart 80/20 Study Prioritizer (for Medium-to-Low graded students)Core Insight: Medium and low-performing students are not short of information. They are burned out and don’t know where to start or which 20% of effort will deliver 80% of the results. They lack smart studying, not more content.What the tool does:
+College enables it with current syllabus + curriculum + exam dates + past results + past question paper weightage.
+Student inputs current courses + recent performance → AI tells them the exact high-impact topics, order of study, and daily focus so they can improve fastest with minimum burnout.Overall Ranking (with 12 competing teams + market focus on medium-to-low students)Rank
+Option
+Overall Score
+Best For
+Key Advantage in Competition
+1
+4. Smart 80/20 Study Prioritizer
+9.5 / 10
+Medium-to-low graded students
+Strongest emotional + practical wow. Directly attacks burnout + Pareto principle. Hard for others to copy well.
+2
+1. Intelligent Course / Elective Advisor
+8.8 / 10
+All students (decision stage)
+Highest decision impact, still excellent
+3
+3. AI Learning & Time Planner
+7.9 / 10
+All students
+Good visual demo, but more common
+4
+2. Academic Progress + Intervention Advisor
+7.2 / 10
+At-risk students
+Useful but more reactive and harder to make “wow”
+
+Full Comparison TableAspect
+1. Course / Elective Advisor
+2. Progress + Intervention
+3. Learning & Time Planner
+4. Smart 80/20 Study Prioritizer (New)
+Target Market
+All students
+At-risk / low performers
+All students
+Medium-to-low graded students (clear focus)
+Core Pain Solved
+Wrong course choices
+“Am I on track?”
+How to plan time
+Burnout + not knowing the 20% that matters
+Wow Factor
+High
+Medium
+High
+Very High — “Study only this and jump 15–20 marks” feels magical
+Differentiation vs 12 teams
+High
+Medium
+Medium
+Highest — Pareto + burnout angle is rare and powerful
+Faculty/Admin Load Reduction
+Very High
+High
+Medium
+High (fewer “how should I study?” questions)
+Demo Strength (today)
+Excellent
+Good
+Excellent
+Excellent (input marks → instant high-impact plan)
+Build Feasibility today
+Medium
+Medium-High
+Medium
+Medium (syllabus + weightage data is key)
+Emotional Resonance
+Medium-High
+High
+Medium
+Highest (speaks to exhausted average students)
+Scalability for University
+High
+High
+High
+Very High (college can push it to every student)
+
+10 KPIs for Option 4 (Smart 80/20 Study Prioritizer)Average mark improvement of users vs non-users (target +12–18 marks)
+% of recommended topics that actually appeared in the exam (weightage accuracy)
+Reduction in total study hours for same or better result
+Student-reported burnout / stress score reduction
+% of students who say “I finally know where to start”
+Plan adherence rate (did they follow the 20% focus?)
+Time-to-first-action (how fast student starts studying after using tool)
+Faculty observation: fewer last-minute panic queries
+Retention / repeat usage across continuous assessment cycles
+% of medium-to-low students who move up at least one performance band
+
+Final RecommendationGo with Option 4 – Smart 80/20 Study Prioritizer.Why it wins today:Clear, underserved market (medium-to-low students)
+Extremely strong “wow” and emotional hook (“stop studying everything, study the 20% that matters”)
+Uses the exact data the university already has (syllabus, past papers, weightage, dates)
+Easy to make the AI look genuinely intelligent
+Differentiates sharply from the other 12 teams who will mostly build generic advisors or planners
+
+Would you like me to lock Option 4 and immediately give you:Exact problem statement for the 1 slide
+Synthetic data structure (syllabus + weightage example)
+Minimum viable prototype features
+Prompt strategy + suggested tech stack for today
+
+Just reply “Lock 4” and we start building the plan.
+
+Explore Pareto Principle applications
+
+Investigate cognitive load theory
+
+Add implementation roadmap for Option 4
+
+updated 80 20 - market - the medium to low end students to push forward
+idea - the students don't have problem of information , they are burned out to start where and which 20 % will yield the 80 % results 
+    - its the smart studying the students lack - in the mdium to low graded student category
+what we solve - the college provides this tool to everyone or this tool specifically enabled with current course syllabus - curricullam - dates, past results , exam dates , past exam question weightage , and their will be few fundamental things that topics which makes the overall subject improve overall
+
+Updated & Strengthened Version of Option 4Refined Concept: Smart 80/20 Study Prioritizer + Foundational BoostTarget Market
+Medium-to-low graded students (the large middle and bottom cohort that universities struggle to push forward).Core Insight
+These students don’t lack information.
+They are burned out and paralyzed.
+They don’t know:Where to start
+Which 20% of topics will deliver 80% of the marks
+Which few fundamental topics actually unlock understanding of the entire subject
+
+They lack smart studying, not more content or motivation lectures.What We Solve
+The university enables this AI tool for every student (or at least every course).
+It is fed with:Current course syllabus / curriculum
+Important dates & exam schedule
+Past results / performance patterns
+Past exam question weightage
+Identified fundamental topics (the 3–6 concepts that disproportionately improve overall subject mastery)
+
+Student Experience  Student selects course + enters recent performance / weak areas  
+AI instantly outputs:The highest-ROI 20% topics (ranked by exam weightage + foundational power)
+The critical fundamental topics that unlock the rest of the subject
+Exact study order (fundamentals first → high-weightage next)
+Realistic daily/weekly focus plan that prevents burnout
+
+Student can ask follow-ups: “I only have 4 days left” or “I am weak in X”
+
+Why this version is strongerAdds the powerful “fundamental topics” layer (this is rare and feels expert-level)
+Still laser-focused on medium-to-low students
+Directly attacks burnout + decision paralysis
+Uses data the university already has
+Extremely high “wow” when the AI says:
+“Master these 4 fundamental topics first — they improve 60%+ of the subject.”
+
+Current Ranking (final view)Rank
+Option
+Score
+Verdict for today
+1
+4. Smart 80/20 + Foundational Prioritizer
+9.6
+Best choice – highest differentiation, emotional punch, and practical impact
+2
+1. Course / Elective Advisor
+8.7
+Strong runner-up
+3
+3. Learning & Time Planner
+7.8
+Good but more common
+4
+2. Progress + Intervention
+7.1
+Solid but less wow
+
+Ready to lock this?This refined version has the highest chance to stand out among the 12 other teams.Reply with “Lock 4” and I will immediately give you:Exact problem statement for your 1 slide  
+Clear assumptions to state  
+Minimum viable prototype scope (what to build by 5:30 pm)  
+Synthetic data structure (syllabus + weightage + fundamentals example)  
+Recommended tech approach + prompt strategy
+
+Just say the word.
+
+Explore cognitive load theory
+
+Investigate spaced repetition algorithms
+
+Add specific syllabus data examples
+
+The Verdict: 8.5/10 — Lock it, but patch 2 dangerous blind spots immediately.
+This is a significantly better idea than a generic "AI Tutor", "Course Elective Advisor", or "Flashcard Generator." It has genuine emotional resonance for Indian college students, and it directly attacks the 3 requirements of the prompt: Academic Decisions (what to cut/prioritize), Learning Outcomes (foundational unlocks), and Time Management (realistic pacing).
+However, as currently written by Grok, a BITSoM business-school jury will poke two massive holes in it within 60 seconds.
+Here is the honest critique, the fixes, and how to execute it to win today.
+The 2 Big Traps in Grok’s Version (And How to Fix Them)
+Trap 1: The "University Sells/Enables This" Delusion (Judges will grill you on this)
+The Flaw: Grok writes: "The university enables this AI tool for every student."
+If you pitch this to BITSoM judges as a pure B2B sale to Indian colleges, they will destroy your go-to-market. Indian universities (AKTU, VTU, Mumbai Univ, Tier-2/3 private colleges) have 12–18 month procurement cycles, rigid bureaucracies, and frankly, university administrations don't prioritize helping students cram 4 days before an exam.
+The Winning Fix: Pitch it as Student-First (B2C / Viral PLG) with an institutional upside:
+"Students adopt it directly via college WhatsApp/Telegram groups during exam season (Freemium). Once an entire batch uses it, universities buy the Enterprise Retention Dashboard to monitor backlog drop-out risks before semester exams."
+Trap 2: The "Just Another Bulleted List" Demo Risk
+The Flaw: If your live demo at 5:30 PM is just a standard text box where the AI outputs a markdown bullet list saying: "1. Learn Pointers (High ROI), 2. Learn Trees...", the judges will think: "This is just a ChatGPT wrapper prompt."
+The Winning Fix: Concept Dependency Mapping.
+The "Foundational Boost" must be visual or structured: Show a "Prerequisite Chain" (e.g., "Red Flag: You cannot score on Dynamic Programming (15-mark Q) without clearing Recursion (30-min foundational unlock)"). That feels like an expert academic engine, not a basic prompt.
+Why This Concept Outclasses the Other Hackathon Options
+Competitor Idea	Why It Usually Fails at Hackathons	Why YOUR Concept Wins
+Course / Elective Advisor	Students pick electives once a year; low engagement, mostly driven by "which professor grades easily."	High Urgency: Exam panic and backlog survival are recurring, high-stakes events.
+Generic Chatbot / Tutor	"Chat with PDF" is boring; judges have seen 50 of them since 2023.	Action-Oriented Triage: Tells you what NOT to study (saving cognitive load).
+Habit / Time Planner	Generic calendars get abandoned within 48 hours.	High-Yield Timetable: Directly connects study minutes to marks/passing probability.
+What to Build by 5:30 PM (Do NOT Over-Engineer)
+Do not try to build a universal PDF parser for all universities today. Build one flawless, interactive path using a real, relatable Indian college subject (e.g., Data Structures & Algorithms or Operating Systems).
+The 3 Screens in Your Demo:
+The Diagnostic Input:
+Dropdown: Subject (Operating Systems - Sem 4).
+Slider: Days until exam (3 days remaining).
+Goal: (Target: Just Pass / 40 Marks vs Target: Distinction / 75+ Marks).
+Quick Weak-spot checkboxes (CPU Scheduling, Paging & Memory, Deadlocks).
+The 80/20 Triage Matrix (The "Hero" Screen):
+The 20% Mark Drivers: 3 high-weightage modules that guarantee 60% of marks based on Indian university 10-mark/5-mark patterns.
+The "Foundation Unlocks" Card: "Before tackling Memory Management, review this 15-minute primer on Physical vs Logical Addressing."
+The "Safe to Skip" Graveyard: Explicitly tells the student what to drop to avoid burnout.
+Dynamic 72-Hour Survival Timetable + Quick Explain:
+Hour-by-hour realistic blocks with built-in buffer/rest breaks.
+A button next to any topic: "Explain as a 10-Mark University Answer" (Structured with Heading, Diagram layout, and key points that professors scan for).
+Technical Plan for Room T03 (Next 5 Hours)
+Backend / LLM:
+Use OpenAI API (gpt-4o-mini) or Anthropic Claude 3.5 Sonnet / Groq for near-instant latency.
+Structure the output strictly as JSON so your frontend can render cards, badges, and progress bars cleanly.
+Frontend:
+Use v0.dev / Cursor / Streamlit / React (Tailwind).
+Keep the design clean: Use distinct colors (Red for Prerequisites, Green for 80/20 High-Yield, Gray for Safe to Skip).
+Mock Data Fallback:
+Pre-save the JSON response for the demo subject locally in a file. If the Wi-Fi or API hiccups during the mentor checkpoint or final judging, toggle the fallback immediately without panicking.
+Final Decision: LOCK OPTION 4.
+This is your strongest bet. Stop brainstorming and start executing:
+Open Cursor / v0 / your IDE.
+Hardcode the subject JSON schema (DSA or Operating Systems).
+Connect the LLM prompt to return: { high_yield_topics, prerequisite_foundations, cut_topics, hourly_schedule }.
+Get Checkpoint 1 signed off with your mentor before lunch!this is what ai studio is telling
+
+Verdict on AI Studio’s critique: Excellent. Take it.It correctly identified the two biggest risks that a BITSoM / business-oriented jury would attack hard:Go-to-market delusion (pure university B2B is slow and unrealistic for Indian colleges).  
+“Just another ChatGPT list” demo risk.
+
+Both fixes are smart and make the concept significantly stronger for today’s live build + pitch.Final Locked Concept (Updated with the fixes)Name working title: 80/20 Survival Engine (or ExamTriage / SmartCut)One-line problem:
+Medium-to-low performing Indian university students are burned out. They don’t lack information — they lack clarity on which 20% of topics (plus a few foundational unlocks) will deliver 80% of the marks before the exam.Solution:
+An AI triage tool that, for any course, instantly shows:High-yield 20% topics (exam weightage driven)
+Critical foundational topics that unlock the rest of the subject (prerequisite chains)
+What is safe to skip right now
+A realistic short-term survival timetable
+
+Go-to-market (the fixed version):  Primary: Student-first / Product-Led Growth. Spreads virally in college WhatsApp & Telegram groups during exam season (freemium).  
+Secondary upside: Once a whole batch uses it, the university can buy an Enterprise Retention Dashboard to spot backlog/dropout risk early.
+
+This framing is much safer and more believable with judges.What to Build Today (exactly the 3-screen plan)Choose one subject only (do this now):
+Operating Systems (Sem 4) or Data Structures & Algorithms.
+OS is slightly better for “foundational unlocks” (e.g., process vs thread, physical vs logical address).Screen 1 – Diagnostic InputSubject dropdown (pre-filled with your chosen subject)
+Days left slider (e.g. 3 / 5 / 7 days)
+Goal: Just Pass (40) vs Safe Zone (55–65) vs Distinction (75+)
+Weak areas checkboxes (4–6 key modules)
+
+Screen 2 – The Hero: 80/20 Triage Matrix (this is the wow)
+Three clear visual cards/columns:High-Yield 20% (Green) – topics that historically carry most marks
+Foundation Unlocks (Red/Orange) – “You must clear these first” with short prerequisite chain (e.g. “Recursion → Trees → Graphs”)
+Safe to Skip / Deprioritize (Grey) – explicitly tells them what to drop to avoid burnout
+
+Screen 3 – Dynamic Survival Timetable + ExplainHour-by-hour (or block) plan for the remaining days with rest buffers
+Button on any topic: “Explain as a 10-mark University Answer” (structured: introduction, key points, diagram suggestion, conclusion — the format Indian examiners scan for)
+
+Technical Execution Plan (Room T03 – next hours)Hardcode one excellent subject knowledge base (syllabus modules + approximate weightage + 4–6 foundational links). This is allowed and smart.
+LLM call must return strict JSON so the frontend can render beautiful cards, not plain text.
+Frontend: Streamlit (fastest) or React + Tailwind / v0.dev. Colour code the three zones clearly.
+Fallback: Save a perfect sample JSON response. If API/Wi-Fi dies during demo, switch to it instantly.
+Prompt core: Force the model to think in terms of Indian university exam patterns (5-mark / 10-mark questions, common weightage, foundational dependencies).
+
+Immediate Next Actions (do these in order)Reply “Confirmed – Lock OS” or “Confirmed – Lock DSA” (pick one subject).  
+I will give you:Exact 1-slide problem statement (with the fixed GTM)
+Ready-to-use synthetic data structure for that subject
+Strong system prompt that forces JSON + foundational chains
+Minimum feature checklist so you don’t overbuild
+
+This version now has real defensive strength against jury questions and a clear “wow” visual path.Which subject do you want to lock?
+Type OS or DSA and we start the exact build package.
+
+Explore Cognitive Load Theory
+
+Investigate Pomodoro Technique
+
+market - the medium to low end students to push forward
+idea - the students don't have problem of information , they are burned out to start where and which 20 % will yield the 80 % results 
+    - its the smart studying the students lack - in the mdium to low graded student category
+what we solve - the college provides this tool to everyone or this tool specifically enabled with current course syllabus - curricullam - dates, past results , exam dates , past exam question weightage , and their will be few fundamental things that topics which makes the overall subject imporove overall emotional tag line - the students who went for any family emergency or who went for extra curricular activities they wont have time for that assessment to get top marks this time which they want to pushthis is updated storyline
+
+Updated Storyline – Locked & StrengthenedFinal Concept Name80/20 Survival Engine
+(or ExamTriage / SmartCut – we can decide later)Refined Storyline (use this)Market
+Medium-to-low performing students in Indian universities — the large group that universities struggle to push forward.Core Insight
+These students don’t lack information.
+They are burned out and don’t know:Where to start
+Which 20% of topics will deliver 80% of the marks
+Which few fundamental topics unlock the entire subject
+
+They lack smart studying.Emotional Hook (new & powerful)
+Students who had a family emergency, were busy with extracurriculars, sports, college fests, or any real-life interruption suddenly have very little time left.
+They still want to push their marks this semester — but they no longer have the luxury of studying everything.
+This tool becomes their survival system.What we solve
+A university-enabled (or student-first) AI tool that takes the current course syllabus + exam dates + past question weightage + fundamental topic dependencies and instantly tells the student:The exact high-ROI 20% topics  
+The critical foundational topics they must clear first  
+What they can safely deprioritize  
+A realistic short-term plan that fits the remaining days
+
+Go-to-market (safe version)  Primary: Student-first. Spreads fast in WhatsApp/Telegram groups during exam season (freemium).  
+Secondary: Once usage is high, universities can buy an institutional dashboard to reduce backlogs and improve retention.
+
+Why this version is strongerClear target (medium-to-low students)
+Strong emotional resonance (family emergency / extracurricular interruption → sudden time shortage)
+Combines Pareto (80/20) + foundational unlocks
+Directly addresses Academic Decisions + Learning Outcomes + Time Management
+Avoids the “university will just buy it” trap
+
+Ready for execution?This storyline is now tight enough for the 1-slide and for Checkpoint 1.Next step – choose the subject (critical for today):Reply with one:OS (Operating Systems)  
+DSA (Data Structures & Algorithms)  
+Or suggest another common Indian engineering subject
+
+Once you choose, I will immediately give you the complete build package:Exact problem statement for the slide  
+Assumptions to state  
+Synthetic data (modules + weightage + foundational chains)  
+Strong JSON-forcing prompt  
+3-screen demo structure  
+Priority checklist for the next few hours
+
+Which subject do you want?
+

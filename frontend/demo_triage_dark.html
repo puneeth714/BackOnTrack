@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExamTriage - 72-Hour Operating Systems Survival Desk</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;800&display=swap');
+    body { font-family: 'Space Grotesk', sans-serif; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-black text-zinc-100 min-h-screen selection:bg-amber-500 selection:text-black">
+
+  <!-- Floating Emergency Header -->
+  <header class="border-b border-zinc-900 bg-black/90 backdrop-blur sticky top-0 z-50 px-4 py-3">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
+        <div>
+          <span class="font-extrabold text-sm tracking-wide text-white uppercase mono">ExamTriage // OS CS304</span>
+          <span class="text-xs text-zinc-500 block">Status: Emergency Mode Active</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="text-xs text-zinc-400 hover:text-white px-2 py-1 rounded bg-zinc-900 border border-zinc-800 mono">
+          ← Back to Hub
+        </a>
+        <div class="bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs px-2.5 py-1 rounded-full font-bold mono">
+          72 Marks in 12.5 hrs
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+    
+    <!-- Emotional Hook Notification Bar -->
+    <div class="p-4 rounded-xl bg-zinc-950 border border-zinc-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center text-amber-400 flex-shrink-0 mt-0.5">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div>
+          <h2 class="text-sm font-bold text-white">Sudden Time Shortage Detected</h2>
+          <p class="text-xs text-zinc-400 mt-0.5">
+            Whether it was a family emergency, medical leave, or organizing the college fest — stop trying to read 14 textbook chapters.
+            Below is your mathematically pruned <span class="text-amber-400 font-bold">20% survival path</span>.
+          </p>
+        </div>
+      </div>
+      <div class="flex-shrink-0">
+        <span class="text-xs text-zinc-400 mono">AICTE Syllabus • VTU/Anna/AKTU</span>
+      </div>
+    </div>
+
+    <!-- Live Panic Slider: "I have X hours until the exam" -->
+    <div class="bg-zinc-950 border border-zinc-800 p-6 rounded-2xl space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <label class="font-bold text-sm text-zinc-200">
+          How many total study hours can you squeeze before the exam?
+        </label>
+        <span class="text-xl font-black text-amber-400 mono" id="hour-display">12.0 Hours</span>
+      </div>
+
+      <input type="range" id="hour-slider" min="6" max="24" value="12" step="1"
+             class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
+             oninput="updateHours(this.value)">
+
+      <div class="grid grid-cols-3 text-center gap-2 pt-2">
+        <div class="p-3 bg-zinc-900/60 rounded-xl border border-zinc-800">
+          <div class="text-xs text-zinc-500 mono uppercase">Minimum Passing</div>
+          <div class="text-lg font-bold text-zinc-300 mono">6 - 8 hrs</div>
+          <div class="text-[10px] text-zinc-500">Yields 45 marks</div>
+        </div>
+        <div class="p-3 bg-amber-500/10 rounded-xl border border-amber-500/30">
+          <div class="text-xs text-amber-400 mono uppercase font-bold">Recommended Sweetspot</div>
+          <div class="text-lg font-bold text-amber-300 mono">12 - 14 hrs</div>
+          <div class="text-[10px] text-amber-400/80">Yields 70-74 marks</div>
+        </div>
+        <div class="p-3 bg-zinc-900/60 rounded-xl border border-zinc-800">
+          <div class="text-xs text-zinc-500 mono uppercase">Max Distinction</div>
+          <div class="text-lg font-bold text-zinc-300 mono">18 - 20 hrs</div>
+          <div class="text-[10px] text-zinc-500">Yields 85+ marks</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The 5 Golden Topics Cards -->
+    <div class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+          The Golden 5 OS Problem Archetypes (Guaranteed 72 Marks)
+        </h3>
+        <span class="text-xs text-zinc-500 mono">Click card to reveal solve pattern</span>
+      </div>
+
+      <!-- Card 1: CPU Scheduling -->
+      <details class="group bg-zinc-950 border border-zinc-800 hover:border-amber-500/50 rounded-xl p-4 transition-all">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded bg-amber-500/20 text-amber-400 mono font-bold text-xs flex items-center justify-center">01</span>
+            <div>
+              <div class="text-sm font-bold text-white group-hover:text-amber-300">CPU Scheduling Numericals (SRTF & Round Robin)</div>
+              <div class="text-xs text-zinc-400">Gantt Chart + Turnaround Time + Waiting Time Table</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-sm font-bold text-amber-400 mono">14 Marks</span>
+            <span class="text-xs text-zinc-500 mono">2.5 hrs prep</span>
+            <i class="fa-solid fa-chevron-down text-zinc-500 text-xs transition-transform group-open:rotate-180"></i>
+          </div>
+        </summary>
+        <div class="mt-4 pt-4 border-t border-zinc-900 text-xs space-y-3">
+          <div class="bg-black p-3 rounded-lg border border-zinc-800 mono">
+            <span class="text-zinc-500"># Prerequisite:</span> Process State Transition Diagram (20 mins).<br>
+            <span class="text-zinc-500"># Exam Formula:</span> Turnaround Time (TAT) = Completion Time - Arrival Time. Waiting Time (WT) = TAT - Burst Time.<br>
+            <span class="text-amber-400"># High Probability Question:</span> 4 processes with Arrival Times [0,1,2,4], Burst Times [5,3,8,6]. Calculate Average WT using Round Robin with time slice = 2.
+          </div>
+        </div>
+      </details>
+
+      <!-- Card 2: Banker's Deadlock Algorithm -->
+      <details class="group bg-zinc-950 border border-zinc-800 hover:border-amber-500/50 rounded-xl p-4 transition-all">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded bg-amber-500/20 text-amber-400 mono font-bold text-xs flex items-center justify-center">02</span>
+            <div>
+              <div class="text-sm font-bold text-white group-hover:text-amber-300">Banker's Algorithm for Deadlock Avoidance</div>
+              <div class="text-xs text-zinc-400">Need Matrix Calculation & Safe Sequence Verification</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-sm font-bold text-amber-400 mono">10 Marks</span>
+            <span class="text-xs text-zinc-500 mono">2.0 hrs prep</span>
+            <i class="fa-solid fa-chevron-down text-zinc-500 text-xs transition-transform group-open:rotate-180"></i>
+          </div>
+        </summary>
+        <div class="mt-4 pt-4 border-t border-zinc-900 text-xs space-y-3">
+          <div class="bg-black p-3 rounded-lg border border-zinc-800 mono">
+            <span class="text-zinc-500"># Prerequisite:</span> Deadlock 4 necessary conditions (Mutual Exclusion, Hold&Wait, No Preemption, Circular Wait).<br>
+            <span class="text-zinc-500"># Exam Formula:</span> Need[i][j] = Max[i][j] - Allocation[i][j]. Check if Need <= Available. If yes: Available = Available + Allocation.<br>
+            <span class="text-amber-400"># High Probability Question:</span> 5 processes, 3 resource types (A=10, B=5, C=7). Verify safety sequence and process new request for P1.
+          </div>
+        </div>
+      </details>
+
+      <!-- Card 3: Page Replacement -->
+      <details class="group bg-zinc-950 border border-zinc-800 hover:border-amber-500/50 rounded-xl p-4 transition-all">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded bg-amber-500/20 text-amber-400 mono font-bold text-xs flex items-center justify-center">03</span>
+            <div>
+              <div class="text-sm font-bold text-white group-hover:text-amber-300">Page Replacement Algorithms (FIFO & LRU)</div>
+              <div class="text-xs text-zinc-400">Frame simulation & Page Fault count calculation</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-sm font-bold text-amber-400 mono">10 Marks</span>
+            <span class="text-xs text-zinc-500 mono">2.0 hrs prep</span>
+            <i class="fa-solid fa-chevron-down text-zinc-500 text-xs transition-transform group-open:rotate-180"></i>
+          </div>
+        </summary>
+        <div class="mt-4 pt-4 border-t border-zinc-900 text-xs space-y-3">
+          <div class="bg-black p-3 rounded-lg border border-zinc-800 mono">
+            <span class="text-zinc-500"># Prerequisite:</span> Paging hardware: Logical Address = Page # (p) + Offset (d).<br>
+            <span class="text-zinc-500"># Rule:</span> In LRU, replace the page that has not been referenced for the longest period. In FIFO, replace oldest frame.<br>
+            <span class="text-amber-400"># Common Trap:</span> Mention Belady's Anomaly for FIFO (more frames can lead to more faults) to get full theory marks.
+          </div>
+        </div>
+      </details>
+
+      <!-- Card 4: Semaphores & Producer-Consumer -->
+      <details class="group bg-zinc-950 border border-zinc-800 hover:border-amber-500/50 rounded-xl p-4 transition-all">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded bg-amber-500/20 text-amber-400 mono font-bold text-xs flex items-center justify-center">04</span>
+            <div>
+              <div class="text-sm font-bold text-white group-hover:text-amber-300">Producer-Consumer Problem with Semaphores</div>
+              <div class="text-xs text-zinc-400">Standard C / Pseudocode implementation with mutex, empty, full</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-sm font-bold text-amber-400 mono">10 Marks</span>
+            <span class="text-xs text-zinc-500 mono">2.0 hrs prep</span>
+            <i class="fa-solid fa-chevron-down text-zinc-500 text-xs transition-transform group-open:rotate-180"></i>
+          </div>
+        </summary>
+        <div class="mt-4 pt-4 border-t border-zinc-900 text-xs space-y-3">
+          <div class="bg-black p-3 rounded-lg border border-zinc-800 mono">
+            <span class="text-zinc-500"># Semaphores needed:</span> semaphore mutex = 1; semaphore empty = N; semaphore full = 0;<br>
+            <span class="text-zinc-500"># Critical section rule:</span> wait(empty) -> wait(mutex) -> [append] -> signal(mutex) -> signal(full).
+          </div>
+        </div>
+      </details>
+
+      <!-- Card 5: Disk Scheduling -->
+      <details class="group bg-zinc-950 border border-zinc-800 hover:border-amber-500/50 rounded-xl p-4 transition-all">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded bg-amber-500/20 text-amber-400 mono font-bold text-xs flex items-center justify-center">05</span>
+            <div>
+              <div class="text-sm font-bold text-white group-hover:text-amber-300">Disk Scheduling (SSTF & SCAN / Elevator)</div>
+              <div class="text-xs text-zinc-400">Head movement distance calculation on cylinder tracks</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-sm font-bold text-amber-400 mono">8 Marks</span>
+            <span class="text-xs text-zinc-500 mono">1.5 hrs prep</span>
+            <i class="fa-solid fa-chevron-down text-zinc-500 text-xs transition-transform group-open:rotate-180"></i>
+          </div>
+        </summary>
+        <div class="mt-4 pt-4 border-t border-zinc-900 text-xs space-y-3">
+          <div class="bg-black p-3 rounded-lg border border-zinc-800 mono">
+            <span class="text-zinc-500"># Easiest 8 marks:</span> Pure subtraction. Head starts at track X, visit tracks in order, sum abs(track[i] - track[i-1]).
+          </div>
+        </div>
+      </details>
+
+    </div>
+
+    <!-- WhatsApp Shareable Action Plan Generator -->
+    <div class="p-6 rounded-2xl bg-zinc-950 border border-zinc-800 space-y-4">
+      <div class="flex items-center justify-between">
+        <h4 class="font-bold text-sm text-white flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+          Copy WhatsApp Group Survival Bullet-Points
+        </h4>
+        <button onclick="copyWhatsAppPlan()" id="btn-wa" class="text-xs px-3 py-1.5 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 rounded-lg hover:bg-emerald-500 hover:text-black font-bold transition-all mono">
+          Copy Text
+        </button>
+      </div>
+      <pre class="bg-black p-4 rounded-xl text-xs text-zinc-400 border border-zinc-900 overflow-x-auto mono" id="wa-text">🚨 OS EXAM 72-HOUR SURVIVAL PLAN (72/100 Marks)
+Target: Don't read all 14 chapters. Master these 5 numericals:
+1. CPU Scheduling (SRTF + Round Robin) -> 14 Marks (2.5h)
+2. Banker's Deadlock Algorithm -> 10 Marks (2.0h)
+3. Page Replacement (FIFO + LRU) -> 10 Marks (2.0h)
+4. Producer-Consumer Semaphores -> 10 Marks (2.0h)
+5. Disk Scheduling (SCAN + SSTF) -> 8 Marks (1.5h)
++ 3 Unlocks (PCB, Mutex, TLB) -> 20 Marks (2.5h)
+🚫 SKIP: RAID levels, Threads theory, File allocation essays.
+Total Effort: 12.5 hrs. Safe First Class guaranteed.</pre>
+    </div>
+
+  </div>
+
+  <script>
+    function updateHours(val) {
+      document.getElementById('hour-display').textContent = parseFloat(val).toFixed(1) + ' Hours';
+    }
+
+    function copyWhatsAppPlan() {
+      const text = document.getElementById('wa-text').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('btn-wa');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy Text', 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "subject": "Operating Systems",
+  "scope": "Mid Term 2 Foundations",
+  "unlock_principles": [
+    {
+      "foundation_id": "F1",
+      "concept_name": "Process States & The Ready Queue Lifecycle",
+      "reading_time_minutes": 20,
+      "why_students_get_stuck": "Students try to draw Gantt charts without realizing that a process only transitions from Running to Ready upon preemption, or to Waiting upon I/O. Without this, SRTF and Round Robin feel like arbitrary numbers.",
+      "the_1_minute_mental_model": "Think of the CPU like a doctor's examination table and Ready Queue as the waiting room. Non-preemptive means doctor won't touch next patient until current patient leaves. Preemptive means if an emergency arrives with shorter time, current patient is sent back to waiting room.",
+      "unlocks_topics": ["CPU Scheduling (SRTF, Round Robin, Priority)"]
+    },
+    {
+      "foundation_id": "F2",
+      "concept_name": "Atomic Semaphore wait() [P] & signal() [V]",
+      "reading_time_minutes": 25,
+      "why_students_get_stuck": "Students memorize code lines without understanding that wait() decrements and blocks if <= 0, while signal() increments and wakes up. They mix up binary (0/1) with counting semaphores.",
+      "the_1_minute_mental_model": "A semaphore is a bouncer with tokens. wait() asks for a token; if basket is empty, you sleep in line. signal() drops a token back and wakes up the first sleeper. Mutex starts with 1 token; buffer slots start with N tokens.",
+      "unlocks_topics": ["Producer-Consumer Problem", "Readers-Writers Problem", "Critical Section Proofs"]
+    },
+    {
+      "foundation_id": "F3",
+      "concept_name": "The Need Matrix in Deadlock Avoidance",
+      "reading_time_minutes": 20,
+      "why_students_get_stuck": "Students fail Banker's algorithm because they compare Available vector with Max instead of Need, or forget to return Allocation back to Available once a process finishes.",
+      "the_1_minute_mental_model": "Need = Max - Allocation. If a process needs 2 apples and bank has 3, bank gives them. Process finishes its task, eats 0, and returns ALL previously held apples (Allocation) back into the bank's basket.",
+      "unlocks_topics": ["Banker's Algorithm Safety Algorithm", "Resource Request Algorithm"]
+    },
+    {
+      "foundation_id": "F4",
+      "concept_name": "Logical Address to Physical Address (Page # + Offset)",
+      "reading_time_minutes": 25,
+      "why_students_get_stuck": "Binary address translation confuses students because they treat offset as an address. Offset never changes during translation; only Page Number is swapped for Frame Number.",
+      "the_1_minute_mental_model": "Page number is the book volume number. Offset is the exact line number on the page. Translation is just looking up the book index to find which shelf (Frame) that volume sits on. The line number (Offset) remains identical.",
+      "unlocks_topics": ["Paging Hardware Diagram", "TLB Effective Memory Access Time", "Inverted Page Tables"]
+    }
+  ]
+}
