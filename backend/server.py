@@ -83,11 +83,11 @@ CURRENT_STATE = {
 def get_student_profile():
     lms = get_student_lms_context(CURRENT_STATE["student_id"])
     return {
-        "id": "rohan",
+        "id": "sunder",
         "name": lms["student_name"],
-        "initials": "RV",
+        "initials": "S",
         "missedPeriod": "Weeks 7–9 (15 Lecture Hours)",
-        "motivationAnchor": "Cultural Fest Coordinator • Avoid Semester Backlog",
+        "motivationAnchor": "Avoid Semester Backlog & Academic Arrears",
         "studyBudgetHours": CURRENT_STATE["hours_budget"]
     }
 
@@ -390,7 +390,7 @@ def agent_triage_endpoint(payload: Dict[str, Any] = Body(...)):
             "status": "COMPLETED",
             "icon": "database",
             "summary": "Retrieved college LMS attendance & IA-1 grades",
-            "detail": "Connected to USN 1RV22CS104 (Rohan Verma) • Attendance: 59.4% (eligibility risk) • IA-1 Score: 8/50 (Process Synchronization: 0/15 marks)"
+            "detail": "Connected to USN 1RV22CS104 (Sunder) • Attendance: 59.4% (eligibility risk) • IA-1 Score: 8/50 (Process Synchronization: 0/15 marks)"
         },
         {
             "step": 3,

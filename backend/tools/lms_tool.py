@@ -33,7 +33,7 @@ def get_student_lms_context(student_id: str = "STU_2022_CS104") -> Dict[str, Any
     # Roster of test personas for multi-flow evaluation
     ROSTER = {
         "STU_2022_CS104": {
-            "name": "Rohan Verma",
+            "name": "Sunder",
             "attendance": 59.4,
             "ia1": 8,
             "reason": "Cultural Fest Lead Coordinator & medical fever",

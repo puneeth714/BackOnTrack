@@ -72,7 +72,7 @@ Navigate to `http://localhost:3000/student` in your browser.
 2. Click **Generate Recovery Plan**.
 3. Observe the **Live Google ADK 2.0 Multi-Agent Execution Pipeline** render in real-time with pulse indicators:
    * **Node 1: IntentParserAgent** (Gemini 2.5 Flash parses 4.0h limit, high panic, pass target).
-   * **Node 2: LMSExtractorTool** (Retrieves Rohan Verma, 59.4% attendance, 8/50 in IA-1).
+   * **Node 2: LMSExtractorTool** (Retrieves Sunder, 59.4% attendance, 8/50 in IA-1).
    * **Node 3: KnowledgeScoperTool** (Identifies Units II, III, IV as compulsory 10–12 markers).
    * **Node 4: PlanSynthesizerAgent** (Compiles optimal 5-topic route, yielding 34 marks in 230 min).
 4. Expand any execution node to inspect raw JSON payload arguments and model reasoning.
